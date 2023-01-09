@@ -1,1 +1,30 @@
-<p>employee works!</p>
+<div class="row">
+  <div class="col">
+    <app-my-table [columnArray]="['name','username','email','website']"
+     [gridArray]="users"
+    (onEdit)="EditUser($event)"   (onDelete)="deleteUser($event)" >
+  </app-my-table>
+    <!-- <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>username</th>
+          <th>email</th>
+          <th>city</th>
+          <th>website</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users;let sr=index">
+          <td>{{sr+1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.username}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.address.city}}</td>
+          <td>{{item.website}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>
+

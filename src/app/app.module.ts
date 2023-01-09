@@ -7,11 +7,13 @@ import { UsersComponent } from './pages/users/users.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MyTableComponent } from './reusable/my-table/my-table.component';
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    MyTableComponent
   ],
   imports: [
     BrowserModule,

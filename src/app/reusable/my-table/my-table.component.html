@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Sr No</th>
+      <th *ngFor="let item of columnArray">{{item}}</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of gridArray;let sr= index">
+      <td>{{sr+1}}</td>
+      <td *ngFor="let column of columnArray">
+       {{item[column]}}
+      </td>
+      <td>
+        <button class="btn btn-sm btn-success" (click)="edit(item)">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteRecord(item)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

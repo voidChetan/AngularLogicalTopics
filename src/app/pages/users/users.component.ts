@@ -1,25 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit ,ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
-
-  clientId: string = '';
-  siteId: string = '';
-  buildingId: string = '';
-  floorId: string = '';
-  clients: any []= [];
-  sites: any []= [];
-  buildings: any []= [];
-  floors: any []= [];
-  constructor(private http: HttpClient) {
-
-  }
+export class UsersComponent implements OnInit,AfterViewInit {
+  clientId: string = ''; siteId: string = '';  buildingId: string = '';
+  floorId: string = '';   clients: any []= [];  sites: any []= [];
+  buildings: any []= [];   floors: any []= [];
+  @ViewChild('myclient') client!: ElementRef | undefined;
+  constructor(private http: HttpClient) { }
   ngOnInit() {
     this.loadClients();
+
+    // setTimeout(() => {
+    //   debugger;
+    //   if(this.client != null) {
+    //     this.client.nativeElement.style.color = 'red';
+    //   }
+    // }, 2000);
+
+  }
+  ngAfterViewInit() {
+    if(this.client != null) {
+      this.client.nativeElement.style.color = 'red';
+    }
   }
 
   loadClients() {
