@@ -1,30 +1,121 @@
+<div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
+  <h1>Angular Logic Building Part - 2 </h1>
+  <h3>Stepper - Show One Div At a time - Show Selected Table Row </h3>
+</div>
+<!-- <div class="row">
+  <div class="col-12 text-center">
+    <div class="btn-group">
+      <button type="button" (click)="changeTab('Basic')" [ngClass]="activeTab == 'Basic'?'btn-success':' btn-primary'"
+        class="btn">Basic</button>
+      <button type="button" (click)="changeTab('Contact')"
+        [ngClass]="activeTab == 'Contact'?'btn-success':' btn-primary'" class="btn">Contact </button>
+      <button type="button" (click)="changeTab('Family')" [ngClass]="activeTab == 'Family'?'btn-success':' btn-primary'"
+        class="btn">Family</button>
+    </div>
+  </div>
+</div> -->
+
 <div class="row">
-  <div class="col">
-    <app-my-table [columnArray]="['name','username','email','website']"
-     [gridArray]="users"
-    (onEdit)="EditUser($event)"   (onDelete)="deleteUser($event)" >
-  </app-my-table>
-    <!-- <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>username</th>
-          <th>email</th>
-          <th>city</th>
-          <th>website</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of users;let sr=index">
-          <td>{{sr+1}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.username}}</td>
-          <td>{{item.email}}</td>
-          <td>{{item.address.city}}</td>
-          <td>{{item.website}}</td>
-        </tr>
-      </tbody>
-    </table> -->
+  <div class="col-xs-12 col-md-8 offset-md-2 ">
+    <div class="wrapper-progressBar">
+      <ul class="progressBar">
+        <li [ngClass]="{'complete':step.isComplete,'active': step.isActive}" (click)="setStep(step)" class="" *ngFor="let step of steps">{{step.step}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 
+<div class="row">
+  <div class="col-12 bg-secondary p-2" *ngIf="activeTab == 'Basic'">
+    <div class="row">
+      <div class="col-3">
+        <label for="">First Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Middle Name</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Last Name</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label for="">City</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">State</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Pin Code</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label for="">State</label>
+        <textarea name="" id="" class="form-control" rows="3"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-12  p-2" *ngIf="activeTab == 'Contact'">
+
+
+    <div class="row">
+      <div class="col-3">
+        <label for="">Contact No</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Alt Contact No</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Email</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <label for="">Office Contact No</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-3">
+        <label for="">Emmergency Contact No</label>
+        <input type="text" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="col-12 p-2" *ngIf="activeTab == 'Family'">
+    <div class="row">
+      <div class="col">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>name --{{currentSelectedRowId}}</th>
+              <th>username</th>
+              <th>email</th>
+              <th>city</th>
+              <th>website</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of users;let sr=index" (click)="onSelect(item.id)"
+              [ngClass]="currentSelectedRowId == item.id? 'bg-success':''">
+              <td>{{sr+1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.username}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.address.city}}</td>
+              <td>{{item.website}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
