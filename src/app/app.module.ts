@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './pages/users/users.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MyTableComponent } from './reusable/my-table/my-table.component';
+import { CustomInterceptor } from './core/interceptor/custom.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,13 @@ import { MyTableComponent } from './reusable/my-table/my-table.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:CustomInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

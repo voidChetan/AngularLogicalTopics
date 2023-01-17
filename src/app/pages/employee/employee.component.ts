@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MyTableComponent } from 'src/app/reusable/my-table/my-table.component';
+import { MasterService } from 'src/app/core/services/master.service';
 
 @Component({
   selector: 'app-employee',
@@ -28,9 +29,17 @@ export class EmployeeComponent {
       isActive: true
     },
   ];
-  constructor(private http: HttpClient) {}
+  requests: any[]= [];
+  constructor(private master: MasterService) {}
   ngOnInit() {
     this.loadUser();
+    this.loadAdminData();
+  }
+  loadAdminData() {
+      debugger;
+    this.master.getAllRequest().subscribe((res: any)=>{
+      this.requests = res;
+    })
   }
   setStep(step: any) {
     this.activeTab = step.step;
