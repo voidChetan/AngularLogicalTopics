@@ -1,0 +1,76 @@
+<div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
+  <h1>Inline Table Editing </h1>
+  <h3> with Reactive Form, validation, select / de-select All  </h3>
+</div>
+<div class="row">
+  <div class="col-6"></div>
+  <div class="col-6 text-end">
+    <button class="btn btn-sm btn-success" (click)="addRow()">Add Employee</button>
+  </div>
+</div>
+<div class="pt-2">
+  <form>
+    <table class="table table-bordered">
+      <thead>
+        <tr class="text-uppercase table-dark">
+          <th scope="col">
+            <input type="checkbox" name="isCheckAll" [(ngModel)]="isCheckAll" (ngModelChange)="checkAll($event)" />
+          </th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody [formGroup]="employeeForm">
+        <ng-container formArrayName="tableRows" *ngFor="let group of getFormControls.controls; let i=index">
+          <tr [formGroupName]="i">
+            <td scope="row" class="align-middle">
+              <input type="checkbox" formControlName="ischecked" />
+            </td>
+            <td>
+              <input type="text" class="form-control" formControlName="firstname" placeholder="Enter First">
+              <div class="text-danger" *ngIf="getFormControls.controls[i].get('firstname')?.touched">
+                <span *ngIf="getFormControls.controls[i].get('firstname')?.errors?.['required']">Required</span>
+                <span *ngIf="getFormControls.controls[i].get('firstname')?.errors?.['minlength']">3 Chars
+                  Required</span>
+              </div>
+            </td>
+            <td>
+              <input type="text" class="form-control" formControlName="lastname" placeholder="Enter Last">
+            </td>
+            <td>
+              <select formControlName="status" (change)="onStatusChange($event,i)" class="form-control">
+                <option value="">Select Status</option>
+                <option value="active">Active</option>
+                <option value="deactive">De-Active</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" class="form-control" formControlName="city" placeholder="Enter City">
+            </td>
+            <td>
+              <input type="text" class="form-control" formControlName="state" placeholder="Enter state">
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="removeEmployee(i)">Remove</button>
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container>
+          <tr>
+            <td colspan="7">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <button class="btn btn-success" [disabled]="employeeForm.invalid" (click)="onSaveForm()">Save Bulk Employee</button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </form>
+</div>

@@ -52,12 +52,7 @@ export class EmployeeComponent {
   }
 
   loadUser() {
-    this.http
-      .get('https://jsonplaceholder.typicode.com/users')
-      .subscribe((result: any) => {
-        this.users = result;
-        debugger;
-      });
+
   }
   EditUser(record: any) {
     debugger;
