@@ -40,6 +40,9 @@
             </td>
             <td>
               <input type="text" class="form-control" formControlName="lastname" placeholder="Enter Last">
+              <div class="text-danger" *ngIf="getFormControls.controls[i].get('lastname')?.touched">
+                <span *ngIf="getFormControls.controls[i].get('lastname')?.errors?.['required']">Required</span>
+              </div>
             </td>
             <td>
               <select formControlName="status" (change)="onStatusChange($event,i)" class="form-control">

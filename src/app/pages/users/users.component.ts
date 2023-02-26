@@ -11,6 +11,31 @@ export class UsersComponent implements OnInit,AfterViewInit {
   buildings: any []= [];   floors: any []= [];
   @ViewChild('myclient') client!: ElementRef | undefined;
   constructor(private http: HttpClient) { }
+
+
+
+
+  openModel() {
+    const modelDiv = document.getElementById('myModal');
+    if(modelDiv!= null) {
+      modelDiv.style.display = 'block';
+    } 
+  }
+
+  CloseModel() {
+    const modelDiv = document.getElementById('myModal');
+    if(modelDiv!= null) {
+      modelDiv.style.display = 'none';
+    } 
+  }
+
+
+
+
+
+
+
+
   ngOnInit() {
     this.loadClients();
 
