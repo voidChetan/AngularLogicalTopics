@@ -11,6 +11,10 @@ import { MyTableComponent } from './reusable/my-table/my-table.component';
 import { CustomInterceptor } from './core/interceptor/custom.interceptor';
 import { ServerSideFilterComponent } from './pages/server-side-filter/server-side-filter.component';
 import { InlineEditingReactiveFormComponent } from './pages/inline-editing-reactive-form/inline-editing-reactive-form.component';
+import { TemplateFormCrudComponent } from './pages/crudSamples/template-form-crud/template-form-crud.component';
+import { ReactiveFormCrudComponent } from './pages/crudSamples/reactive-form-crud/reactive-form-crud.component';
+import { NgContentContainerOutletComponent } from './pages/ng-content-container-outlet/ng-content-container-outlet.component';
+import { MyCardComponent } from './reusable/my-card/my-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,11 @@ import { InlineEditingReactiveFormComponent } from './pages/inline-editing-react
     EmployeeComponent,
     MyTableComponent,
     ServerSideFilterComponent,
-    InlineEditingReactiveFormComponent
+    InlineEditingReactiveFormComponent,
+    TemplateFormCrudComponent,
+    ReactiveFormCrudComponent,
+    NgContentContainerOutletComponent,
+    MyCardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +41,9 @@ import { InlineEditingReactiveFormComponent } from './pages/inline-editing-react
       useClass:CustomInterceptor,
       multi:true
     }
+  ],
+  entryComponents:[
+    UsersComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,104 @@
+<div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
+    <h1>Advance Directives </h1>
+    <h3>ng-content, ng-container, ngTemplateOutlet , ng-template</h3>
+</div>
+<div class="row pt-2">
+    <div class="col-3">
+        <app-my-card [headerTitle]="'Student List'">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sachin</td>
+                        <td>9988776655</td>
+                        <td>Mumbai</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Saurabh</td>
+                        <td>77664557885</td>
+                        <td>Pune</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Rahul</td>
+                        <td>567567567</td>
+                        <td>Bhopal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </app-my-card>
+    </div>
+    <div class="col-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>State</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="isLoader">
+                    <tr>
+                        <td colspan="4">
+                            <div class="spinner-grow text-muted"></div>
+                            <div class="spinner-grow text-primary"></div>
+                            <div class="spinner-grow text-success"></div>
+                            <div class="spinner-grow text-info"></div>
+                            <div class="spinner-grow text-warning"></div>
+                            <div class="spinner-grow text-danger"></div>
+                            <div class="spinner-grow text-secondary"></div>
+                            <div class="spinner-grow text-dark"></div>
+                            <div class="spinner-grow text-light"></div>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container *ngIf="!isLoader">
+                    <ng-container *ngFor="let item of studentList">
+                        <tr  *ngIf="item.state == 'MH'">
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.state}}</td>
+                            <td>{{item.city}}</td>
+                        </tr>
+                    </ng-container> 
+                </ng-container> 
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3 bg-secondary">
+
+        <div class="card">
+            <div class="card-body">
+                <div *ngTemplateOutlet="loader">
+
+                </div>
+                <div *ngTemplateOutlet="loader2">
+                    
+                </div>
+            </div>
+        </div>
+        <ng-template #loader>
+            <div class="spinner-border"></div>
+        </ng-template>
+        <ng-template #loader2>
+            <button class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm"></span>
+                Loading..
+              </button>
+        </ng-template>
+    </div>
+    <div class="col-3">
+
+    </div>
+</div>
