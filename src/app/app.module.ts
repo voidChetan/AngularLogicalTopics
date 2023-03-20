@@ -14,7 +14,9 @@ import { InlineEditingReactiveFormComponent } from './pages/inline-editing-react
 import { TemplateFormCrudComponent } from './pages/crudSamples/template-form-crud/template-form-crud.component';
 import { ReactiveFormCrudComponent } from './pages/crudSamples/reactive-form-crud/reactive-form-crud.component';
 import { NgContentContainerOutletComponent } from './pages/ng-content-container-outlet/ng-content-container-outlet.component';
-import { MyCardComponent } from './reusable/my-card/my-card.component';
+import { MyCardComponent } from './reusable/my-card/my-card.component'; 
+import { HighLightDirective } from './shared/directives/high-light.directive';
+import { MyTooltipDirective } from './shared/directives/my-tooltip.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { MyCardComponent } from './reusable/my-card/my-card.component';
     TemplateFormCrudComponent,
     ReactiveFormCrudComponent,
     NgContentContainerOutletComponent,
-    MyCardComponent
+    MyCardComponent,
+    HighLightDirective,
+    MyTooltipDirective
   ],
   imports: [
     BrowserModule,

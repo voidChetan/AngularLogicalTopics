@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit ,ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit ,Renderer2,ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-users',
@@ -6,11 +6,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit,AfterViewInit {
-  clientId: string = ''; siteId: string = '';  buildingId: string = '';
-  floorId: string = '';   clients: any []= [];  sites: any []= [];
-  buildings: any []= [];   floors: any []= [];
+  
+
   @ViewChild('myclient') client!: ElementRef | undefined;
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient,private renderer: Renderer2,private elementRef: ElementRef) { }
+
+  changeColor() { 
+    const button = this.elementRef.nativeElement.querySelector('button');
+    this.renderer.setStyle(button, 'background-color', 'red');
+  }
+
+  changeFontColor() { 
+    const button = this.elementRef.nativeElement.querySelector('#dpdlSite');
+    this.renderer.addClass(button, 'text-danger');
+  }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -36,6 +55,28 @@ export class UsersComponent implements OnInit,AfterViewInit {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  clientId: string = ''; siteId: string = '';  buildingId: string = '';
+  floorId: string = '';   clients: any []= [];  sites: any []= [];
+  buildings: any []= [];   floors: any []= [];
   ngOnInit() {
     this.loadClients();
 
@@ -49,7 +90,7 @@ export class UsersComponent implements OnInit,AfterViewInit {
   }
   ngAfterViewInit() {
     if(this.client != null) {
-      this.client.nativeElement.style.color = 'red';
+     // this.client.nativeElement.style.color = 'red';
     }
   }
 

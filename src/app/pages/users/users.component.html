@@ -1,14 +1,25 @@
 <div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
-  <h1>Angular Logic Building </h1>
-  <h3>Depedent Dropdown Angular </h3>
+  <h1>ElementRef & Renderer2 </h1>
+  <h3>Angular Logic Building </h3>
+
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <!-- <div class="col-3">
       <button class="btn btn-success" (click)="openModel()">Open Model</button>
     </div>
     <div class="col-3">
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Open Model 2</button>
+    </div> -->
+    <div class="col-12 text-end">
+      <button appMyTooltip [isTemplate]="true" [appTooltipTemplate]="tooltipTemplate" >Hover me 2!</button>
+
+      <ng-template #tooltipTemplate>
+        <p>This is a tooltip message.</p>
+      </ng-template>
+      <button appMyTooltip [isTemplate]="false" [appTooltip]="'Test mssss'">Hover me!</button>
+      <button class="btn btn-secondary" (click)="changeFontColor()">Change Font Color </button>
+      <button class="btn btn-success" (click)="changeColor()">Change Color</button>
     </div>
   </div>
   <div class="row mt-3">
@@ -21,21 +32,21 @@
     </div>
     <div class="col-3">
       <label for="">Select Site</label>
-      <select class="form-control" (change)="getBuildingBySiteId()" [(ngModel)]="siteId" >
+      <select class="form-control" id="dpdlSite" (change)="getBuildingBySiteId()" [(ngModel)]="siteId">
         <option value="">Select </option>
         <option *ngFor="let item of sites" [value]="item.siteId">{{item.siteName}}</option>
       </select>
     </div>
     <div class="col-3">
       <label for="">Select Building</label>
-      <select class="form-control" (change)="getFloorByBuilidngId()"  [(ngModel)]="buildingId" >
+      <select class="form-control" (change)="getFloorByBuilidngId()" [(ngModel)]="buildingId">
         <option value="">Select </option>
         <option *ngFor="let item of buildings" [value]="item.buildingId">{{item.buildingName}}</option>
       </select>
     </div>
     <div class="col-3">
       <label for="">Select Floor</label>
-      <select class="form-control" [(ngModel)]="floorId" >
+      <select class="form-control" [(ngModel)]="floorId">
         <option value="">Select </option>
         <option *ngFor="let item of floors" [value]="item.floorId">{{item.floorNo}}</option>
       </select>
@@ -53,17 +64,17 @@
 
 <div class="modal" id="myModal">
   <div class="modal-dialog">
-    <div class="modal-content"> 
+    <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">Modal Heading</h4>
         <button type="button" class="btn-close" (click)="CloseModel()" data-bs-dismiss="modal"></button>
-      </div> 
+      </div>
       <div class="modal-body">
-        
-      </div> 
+
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger"    data-bs-dismiss="modal">Close</button>
-      </div> 
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
