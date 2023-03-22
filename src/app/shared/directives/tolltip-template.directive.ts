@@ -29,7 +29,7 @@ export class TolltipTemplateDirective {
   onMouseOut() {
     setTimeout(() => {
       const tooltip =  this.elRef.nativeElement.querySelector('.toolTipMy');
-     // this.renderer.removeChild(this.elRef.nativeElement, tooltip);
+      this.renderer.removeChild(this.elRef.nativeElement, tooltip);
     }, 300); 
   }
 }
