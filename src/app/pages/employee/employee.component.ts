@@ -36,7 +36,7 @@ export class EmployeeComponent {
     this.loadAdminData();
   }
   loadAdminData() {
-      debugger;
+      
     this.master.getAllRequest().subscribe((res: any)=>{
       this.requests = res;
     })
@@ -55,9 +55,9 @@ export class EmployeeComponent {
 
   }
   EditUser(record: any) {
-    debugger;
+    
   }
   deleteUser(record: any) {
-    debugger;
+    
   }
 }

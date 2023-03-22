@@ -12,12 +12,6 @@
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">Open Model 2</button>
     </div> -->
     <div class="col-12 text-end">
-      <button appMyTooltip [isTemplate]="true" [appTooltipTemplate]="tooltipTemplate" >Hover me 2!</button>
-
-      <ng-template #tooltipTemplate>
-        <p>This is a tooltip message.</p>
-      </ng-template>
-      <button appMyTooltip [isTemplate]="false" [appTooltip]="'Test mssss'">Hover me!</button>
       <button class="btn btn-secondary" (click)="changeFontColor()">Change Font Color </button>
       <button class="btn btn-success" (click)="changeColor()">Change Color</button>
     </div>

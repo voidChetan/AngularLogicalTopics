@@ -16,22 +16,24 @@ export class ServerSideFilterComponent implements OnInit {
     "PageNumber": 1,
     "PageSize": 10
   }
+  pageTitle: string = 'Server Side Filter';
   constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    this.filetrCandidates();
+    this.filetrCandidates('');
   }
 
   onPrevious() {
     this.filterObj.PageNumber --;
-    this.filetrCandidates();
+    this.filetrCandidates('');
   }
   onNext() {
     this.filterObj.PageNumber ++;
-    this.filetrCandidates();
+    this.filetrCandidates('');
   }
 
-  filetrCandidates() {
+  filetrCandidates(param: string) {
+    
     this.http.post('http://onlinetestapi.gerasim.in/api/OnlineTest/GetCandidatesByFilter',this.filterObj).subscribe((res:any)=> {
       this.candidates = res.data;
     })

@@ -13,7 +13,7 @@ export class CustomInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    debugger;
+    
     if(request.url != 'https://jsonplaceholder.typicode.com/users')
     {
       const token =  'bearer ' + localStorage.getItem('token');

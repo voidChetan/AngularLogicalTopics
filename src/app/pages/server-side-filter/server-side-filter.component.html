@@ -1,3 +1,5 @@
+ 
+ <app-jumbotron [title]="pageTitle" [description]="'Video Explaning Server Side filtrering '"></app-jumbotron>
 <div class="card">
   <div class="card-header bg-success text-white">
     Candidate List
@@ -14,13 +16,15 @@
         <input type="text" class="form-control" [(ngModel)]="filterObj.Email" placeholder="Search By Email">
       </div>
       <div class="col-3">
-        <button class="btn btn-sm btn-success" (click)="filetrCandidates()">Search</button>
+        <app-my-button [text]="'Search'" [btnClass]="'btn-sm btn-success'" (onBtnClick)="filetrCandidates($event)"> </app-my-button>
+
+        <!-- <button class="btn btn-sm btn-success" (click)="filetrCandidates()">Search</button> -->
       </div>
     </div>
     <div class="row">
       <div class="col-2">
         <div class="dataTables_length"><label>Show
-            <select [(ngModel)]="filterObj.PageSize" (change)="filetrCandidates()">
+            <select [(ngModel)]="filterObj.PageSize" (change)="filetrCandidates('')">
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="20">20</option>
@@ -43,7 +47,9 @@
     </div>
     <div class="row">
       <div class="col-3 pt-2"  *ngFor="let item of candidates;let index =index">
-        <div class="card">
+
+        <app-list-card [obj]="item"> </app-list-card>
+        <!-- <div class="card">
           <div class="card-header bg-secondary" appHighLight>
             {{item.name}}
           </div>
@@ -59,7 +65,7 @@
               </div>
             </div> 
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- <table class="table table-bordered table-striped table-hover">

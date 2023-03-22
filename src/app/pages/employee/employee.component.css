@@ -3,6 +3,11 @@
 }
 
 
+.fa {
+  color: #6464f2;
+  font-size: 17px;
+  cursor: pointer;
+}
 
 .progressBar li {
   list-style-type: none;

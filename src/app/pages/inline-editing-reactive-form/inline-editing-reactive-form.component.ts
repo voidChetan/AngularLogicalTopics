@@ -41,7 +41,7 @@ export class InlineEditingReactiveFormComponent {
   }
 
   checkAll(checkVal: boolean) {
-    debugger;
+    
     this.getFormControls.controls.forEach(formGroup => {
       formGroup.get('ischecked')?.setValue(checkVal);
     });
@@ -67,6 +67,6 @@ export class InlineEditingReactiveFormComponent {
 
   onSaveForm() {
     const formValue = this.employeeForm.value;
-    debugger;
+    
   }
 }

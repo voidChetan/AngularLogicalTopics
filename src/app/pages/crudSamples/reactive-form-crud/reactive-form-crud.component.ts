@@ -56,9 +56,9 @@ export class ReactiveFormCrudComponent implements OnInit {
   }
 
   saveDealer() {
-    debugger;
+    
     this.http.post("http://onlinetestapi.gerasim.in/api/StockApp/AddDealerMasters", this.dealerForm.value).subscribe((result: any) => {
-      debugger;
+      
       this.initializeForm();
       this.loadDealers();
     },
@@ -68,7 +68,7 @@ export class ReactiveFormCrudComponent implements OnInit {
   }
   updateDealer() {
     this.http.post("http://onlinetestapi.gerasim.in/api/StockApp/UpdateDealerMasters", this.dealerForm.value).subscribe((result: any) => {
-      debugger;
+      
       this.initializeForm();
       this.loadDealers();
     },

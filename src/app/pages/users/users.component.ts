@@ -81,7 +81,7 @@ export class UsersComponent implements OnInit,AfterViewInit {
     this.loadClients();
 
     // setTimeout(() => {
-    //   debugger;
+    //   
     //   if(this.client != null) {
     //     this.client.nativeElement.style.color = 'red';
     //   }

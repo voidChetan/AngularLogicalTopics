@@ -1,7 +1,78 @@
 <div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
-  <h1>Angular Logic Building Part - 2 </h1>
-  <h3>Stepper - Show One Div At a time - Show Selected Table Row </h3>
+  <h1>Custom Directive - tooltip with Html Template</h1>
+  <h3>using elementRef and Renderer </h3>
 </div>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form class="row g-3">
+        <div class="col-md-2">
+          <label>First name <i class="fa fa-info-circle" appMyTootip [appTooltip]="'Demo Text'" ></i></label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-2">
+          <label>Last name <i class="fa fa-info-circle" appTolltipTemplate [myTemplate]="lastNameTem" ></i></label>
+          <input type="text" class="form-control">
+
+          <ng-template #lastNameTem> 
+            <div class="row">
+              <div class="col-8">
+                This Need Name As per PAN
+              </div>
+              <div class="col-4">
+                <i class="fa fa-info-circle tooltiFa"></i>
+              </div>
+              <div class="col-12">
+                <small>Please Provide Full Name</small> 
+               </div>
+            </div> 
+          </ng-template>
+        </div>
+        <div class="col-md-4">
+          <label>Username <i class="fa fa-info-circle"></i></label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label>City</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label>State</label>
+          <select class="form-select">
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label>Zip <i class="fa fa-info-circle"></i></label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <!-- <div class="row">
   <div class="col-12 text-center">
     <div class="btn-group">
@@ -15,7 +86,7 @@
   </div>
 </div> -->
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12 col-md-8 offset-md-2 ">
     <div class="wrapper-progressBar">
       <ul class="progressBar">
@@ -23,8 +94,8 @@
       </ul>
     </div>
   </div>
-</div>
-
+</div> -->
+<!-- 
 <div class="row">
   <div class="col-12 bg-secondary p-2" *ngIf="activeTab == 'Basic'">
     <div class="row">
@@ -118,4 +189,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

@@ -57,7 +57,7 @@ export class TemplateFormCrudComponent  implements OnInit{
 
   saveDealer() {
     this.http.post("http://onlinetestapi.gerasim.in/api/StockApp/AddDealerMasters", this.dealerObj).subscribe((result: any) => {
-      debugger;
+      
       this.initializeForm();
       this.loadDealers();
     },
@@ -67,7 +67,7 @@ export class TemplateFormCrudComponent  implements OnInit{
   }
   updateDealer() {
     this.http.post("http://onlinetestapi.gerasim.in/api/StockApp/UpdateDealerMasters", this.dealerObj).subscribe((result: any) => {
-      debugger;
+      
       this.initializeForm();
       this.loadDealers();
     },
@@ -80,7 +80,7 @@ export class TemplateFormCrudComponent  implements OnInit{
 
     if(isConfirm) {
       this.http.post("http://onlinetestapi.gerasim.in/api/StockApp/DeleteDealerById?id="+ id, {}).subscribe((result: any) => {
-        debugger;
+        
         this.initializeForm();
         this.loadDealers();
       },

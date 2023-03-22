@@ -1,43 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
  
   
-  .tooltipMy:before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #f1f1f1 transparent;
-  }
-  
-  .tooltipMy.show {
-    visibility: visible;
-    opacity: 1;
-  }
-  
+.toolTipMy:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f1f1f1 transparent;
+}
 
-  .tooltipMy {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-    visibility: visible;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-   
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltipMy:hover .tooltiptext {
-    visibility: visible;
-  }
+.tooltiFa {
+  color: #ffff !important;
+}
+
+.toolTipMy.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.toolTipMy {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted gray;
+  visibility: visible;
+  width: 170px;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px; 
+  position: absolute;
+  z-index: 1;
+}
+
+.toolTipMy:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+
+
+
+.toolTipMy1:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%; 
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #f1f1f1 transparent;
+}
+
+.tooltiFa {
+  color: #ffff !important;
+}
+
+.toolTipMy1.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.toolTipMy1 {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  visibility: visible;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px; 
+  position: absolute;
+  z-index: 1;
+}
+
+.toolTipMy1:hover .tooltiptext {
+  visibility: visible;
+}
