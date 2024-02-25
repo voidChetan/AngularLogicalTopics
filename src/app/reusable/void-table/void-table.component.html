@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-9">
+    </div>
+    <div class="col-3 text-end">
+        <input type="text" [(ngModel)]="searchBox" (ngModelChange)="onSearchChange($event)"  class="form-control" placeholder="Serach">
+    </div>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th *ngFor="let column of columnArray"> {{column.header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of filteredData;let sr = index">
+            <td>{{sr+1}}</td>
+            <td *ngFor="let column of columnArray">
+                <div *ngIf="column.header == 'Action' && showActionButton">
+                    <button class="btn btn-sm btn-success" (click)="editRecord(user)">Edit</button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteRecord(user)">Delete</button>
+                </div>
+                <div *ngIf="column !== 'Action'">
+                    <span *ngIf="column.dataType == 'string'"> {{user[column.fieldName] | titlecase}}</span>
+                    <span *ngIf="column.dataType == 'date'"> {{user[column.fieldName]| date:'dd-MMM-yyyy'}}</span>
+                </div>
+              
+            </td>
+        </tr>
+    </tbody>
+</table>

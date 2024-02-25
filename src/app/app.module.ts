@@ -22,6 +22,10 @@ import { JumbotronComponent } from './reusable/jumbotron/jumbotron.component';
 import { MyButtonComponent } from './reusable/my-button/my-button.component';
 import { MyTootipDirective } from './shared/directives/my-tootip.directive';
 import { TolltipTemplateDirective } from './shared/directives/tolltip-template.directive';
+import { JsonUserComponent } from './pages/json-user/json-user.component';
+import { VoidTableComponent } from './reusable/void-table/void-table.component';
+import { AgGridAngular } from 'ag-grid-angular';
+import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,14 +44,18 @@ import { TolltipTemplateDirective } from './shared/directives/tolltip-template.d
     JumbotronComponent,
     MyButtonComponent,
     MyTootipDirective,
-    TolltipTemplateDirective
+    TolltipTemplateDirective,
+    JsonUserComponent,
+    VoidTableComponent,
+    AgGridUseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgGridAngular
   ],
   providers: [
     {

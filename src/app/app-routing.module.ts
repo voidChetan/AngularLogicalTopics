@@ -7,6 +7,8 @@ import { InlineEditingReactiveFormComponent } from './pages/inline-editing-react
 import { NgContentContainerOutletComponent } from './pages/ng-content-container-outlet/ng-content-container-outlet.component';
 import { ServerSideFilterComponent } from './pages/server-side-filter/server-side-filter.component';
 import { UsersComponent } from './pages/users/users.component';
+import { JsonUserComponent } from './pages/json-user/json-user.component';
+import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path:'ng-content-container-outlet',
     component: NgContentContainerOutletComponent
+  },
+  {
+    path:'json-user',
+    component: JsonUserComponent
+  },
+  {
+    path:'ag-grid',
+    component: AgGridUseComponent
   }
 ];
 
