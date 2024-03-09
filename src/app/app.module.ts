@@ -27,6 +27,7 @@ import { VoidTableComponent } from './reusable/void-table/void-table.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
+import { FormElementWrapperComponent } from './reusable/form-element-wrapper/form-element-wrapper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ContentProjectionComponent } from './pages/content-projection/content-p
     JsonUserComponent,
     VoidTableComponent,
     AgGridUseComponent,
-    ContentProjectionComponent
+    ContentProjectionComponent,
+    FormElementWrapperComponent
   ],
   imports: [
     BrowserModule,

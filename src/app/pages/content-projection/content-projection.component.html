@@ -1,40 +1,40 @@
+<app-jumbotron [title]="'Content Projection in Angular'"
+    [description]="'A most used scenario to use content projection'"></app-jumbotron>
 <form class="g-3 needs-validation">
     <div class="row">
         <div class="col-md-3">
-            <label class="form-label" title="Tooltip on top">First Name</label>
-            <input type="text" #fname="ngModel" name="fname" [(ngModel)]="obj.fname" class="form-control" required>
-            <div class="text-danger" *ngIf="fname.touched">
-                <small *ngIf="fname.errors?.['required']">This Is Required!</small>
-            </div>
+            <app-form-element-wrapper [label]="'First Name'" [tooltip]="'Enter your First Name only'"
+                [validation]="fname.touched && fname.errors ? fname.errors : {}">
+                <input type="text" #fname="ngModel" name="fname" [(ngModel)]="obj.fname" class="form-control"
+                    minlength="5" required>
+            </app-form-element-wrapper>
         </div>
         <div class="col-md-3">
-            <label for="validationCustom02" class="form-label">Last Name</label>
-            <input type="text" class="form-control" #lname="ngModel" name="lName" [(ngModel)]="obj.lName" required>
-            <div class="text-danger" *ngIf="lname.touched">
-                <small *ngIf="lname.errors?.['required']">This Is Required!</small>
-            </div>
+            <app-form-element-wrapper [label]="'Last Name'" [tooltip]="'Enter your Last Name only'"
+                [validation]="lname.touched && lname.errors ? lname.errors : {}">
+                <input type="text" class="form-control" #lname="ngModel" name="lName" [(ngModel)]="obj.lName" required>
+            </app-form-element-wrapper>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <label class="form-label" title="Tooltip on top">User Name</label>
-            <input type="text" #userName="ngModel" name="userName" [(ngModel)]="obj.userName" class="form-control"
-                required>
-            <div class="text-danger" *ngIf="userName.touched">
-                <small *ngIf="userName.errors?.['required']">This Is Required!</small>
-            </div>
+            <app-form-element-wrapper [label]="'User Name'" [tooltip]="'Enter your First Name only'"
+                [validation]="userName.touched && userName.errors ? userName.errors : {}">
+                <input type="text" #userName="ngModel" name="userName" [(ngModel)]="obj.userName" class="form-control"
+                    required>
+            </app-form-element-wrapper>
         </div>
         <div class="col-md-3">
-            <label class="form-label" title="Tooltip on top">City</label>
-            <input type="text" #city="ngModel" name="city" [(ngModel)]="obj.city" class="form-control" required>
-            <div class="text-danger" *ngIf="city.touched">
-                <small *ngIf="city.errors?.['required']">This Is Required!</small>
-            </div>
+            <app-form-element-wrapper [label]="'City'" [tooltip]="'Enter your First Name only'"
+                [validation]="city.touched && city.errors ? city.errors : {}">
+                <input type="text" #city="ngModel" name="city" [(ngModel)]="obj.city" class="form-control" required>
+            </app-form-element-wrapper>
+
         </div>
     </div>
     <div class="row pt-3">
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
-    </div> 
+    </div>
 </form>
