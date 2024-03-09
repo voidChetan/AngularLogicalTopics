@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class ContentProjectionComponent {
 
+  obj: any = {
+    fname: '',
+    lName: '',
+    userName: '',
+    city: ''
+  }
 }
