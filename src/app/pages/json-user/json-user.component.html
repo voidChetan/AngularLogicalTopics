@@ -4,19 +4,9 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <!-- <app-void-table [showActionButton]="true" [tableData]="usersArray" [columnArray]="columnArray"
-            (onEdit)="editUser($event)" (onDelete)="deleteUser($event)"
-        > 
-    
-    </app-void-table> -->
-        <div style="margin: 10px 0;">
-            <!-- <button (click)="onBtnExport()">Download CSV export file</button> -->
-        </div>
-        <!-- <ag-grid-angular class="ag-theme-quartz" [defaultColDef]="defaultColDef" [paginationPageSize]="20"
-            [paginationPageSizeSelector]="[5,10,20,50,100,500,1000]" [suppressExcelExport]="true"
-            style="height: 500px;width:100%" [pagination]="true" [suppressRowClickSelection]="true"
-            (selectionChanged)="onSelectionChanged($event)" (gridReady)="onGridReady($event)"
-            [rowSelection]="rowSelection" [rowData]="usersArray" [columnDefs]="columnDefs"></ag-grid-angular> -->
+        <app-void-table [showActionButton]="true" [tableData]="usersArray" [columnArray]="columnArray"
+            (onEdit)="editUser($event)" (onDelete)="deleteUser($event)">
+
+        </app-void-table>
 
     </div>
-</div>

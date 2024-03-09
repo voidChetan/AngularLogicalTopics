@@ -1,30 +1,67 @@
+
+
 <nav class="navbar navbar-expand-sm bg-secondary justify-content-center">
   <ul class="navbar-nav"> 
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/employee">Employee</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Reusable Component
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+        <li  >
+          <a class="dropdown-item" routerLink="/json-user">Reusable Table</a>
+        </li>
+      </ul>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/serverSideFilter">Filtering</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Forms
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" routerLink="/template-form">Template Form</a></li>
+        <li ><a class="dropdown-item" routerLink="/reactive-form">Reactive From</a> </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item" routerLink="/inlineReactive">Inline Editing Reactive</a>
+        </li>
+      </ul>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/inlineReactive">Inline Editing Reactive</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Directives
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" routerLink="/employee">Custom Tool-tip</a></li> 
+        <li><a class="nav-link text-white text-white" routerLink="/ng-content-container-outlet">ng-content,ng-container,ng-outlet </a></li>
+      </ul>
     </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/template-form">Template Form</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/reactive-form">Reactive From</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/ng-content-container-outlet">Adv Directives</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/json-user">User</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/ag-grid">AG-Grid</a>
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Filtering
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" routerLink="/serverSideFilter">Server Side Filtering</a></li> 
+      </ul>
     </li>
     
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Third Party Library
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+        <li  >
+          <a class="dropdown-item" routerLink="/ag-grid">AG-Grid</a>
+        </li>
+      </ul>
+    </li> 
+    <li class="nav-item dropdown">
+      <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         Advance Topics
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" routerLink="/content-projection">Content-Projection</a></li> 
+        
+      </ul>
+    </li>
   </ul>
 </nav>
 

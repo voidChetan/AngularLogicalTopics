@@ -9,6 +9,7 @@ import { ServerSideFilterComponent } from './pages/server-side-filter/server-sid
 import { UsersComponent } from './pages/users/users.component';
 import { JsonUserComponent } from './pages/json-user/json-user.component';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
+import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path:'ag-grid',
     component: AgGridUseComponent
+  },
+  {
+    path:'content-projection',
+    component: ContentProjectionComponent
   }
 ];
 

@@ -26,6 +26,7 @@ import { JsonUserComponent } from './pages/json-user/json-user.component';
 import { VoidTableComponent } from './reusable/void-table/void-table.component';
 import { AgGridAngular } from 'ag-grid-angular';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
+import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
     TolltipTemplateDirective,
     JsonUserComponent,
     VoidTableComponent,
-    AgGridUseComponent
+    AgGridUseComponent,
+    ContentProjectionComponent
   ],
   imports: [
     BrowserModule,
