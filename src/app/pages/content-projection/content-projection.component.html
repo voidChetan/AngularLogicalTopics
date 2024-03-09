@@ -1,37 +1,34 @@
-<form class="g-3 needs-validation" novalidate>
+<form class="g-3 needs-validation">
     <div class="row">
         <div class="col-md-3">
-            <label class="form-label" title="Tooltip on top">First name</label>
+            <label class="form-label" title="Tooltip on top">First Name</label>
             <input type="text" #fname="ngModel" name="fname" [(ngModel)]="obj.fname" class="form-control" required>
             <div class="text-danger" *ngIf="fname.touched">
-                <small *ngIf="fname.errors?.['required']">First Name Is Required!</small>
+                <small *ngIf="fname.errors?.['required']">This Is Required!</small>
             </div>
         </div>
         <div class="col-md-3">
-            <label for="validationCustom02" class="form-label">Last name</label>
+            <label for="validationCustom02" class="form-label">Last Name</label>
             <input type="text" class="form-control" #lname="ngModel" name="lName" [(ngModel)]="obj.lName" required>
             <div class="text-danger" *ngIf="lname.touched">
-                <small *ngIf="lname.errors?.['required']">Last Name Is Required!</small>
+                <small *ngIf="lname.errors?.['required']">This Is Required!</small>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Username</label>
-            <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername"
-                    aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Please choose a username.
-                </div>
+            <label class="form-label" title="Tooltip on top">User Name</label>
+            <input type="text" #userName="ngModel" name="userName" [(ngModel)]="obj.userName" class="form-control"
+                required>
+            <div class="text-danger" *ngIf="userName.touched">
+                <small *ngIf="userName.errors?.['required']">This Is Required!</small>
             </div>
         </div>
         <div class="col-md-3">
-            <label for="validationCustom03" class="form-label">City</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
-            <div class="invalid-feedback">
-                Please provide a valid city.
+            <label class="form-label" title="Tooltip on top">City</label>
+            <input type="text" #city="ngModel" name="city" [(ngModel)]="obj.city" class="form-control" required>
+            <div class="text-danger" *ngIf="city.touched">
+                <small *ngIf="city.errors?.['required']">This Is Required!</small>
             </div>
         </div>
     </div>
@@ -39,6 +36,5 @@
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
-    </div>
-   
+    </div> 
 </form>
