@@ -28,6 +28,13 @@ import { AgGridAngular } from 'ag-grid-angular';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
 import { FormElementWrapperComponent } from './reusable/form-element-wrapper/form-element-wrapper.component';
+import { CustomerListComponent } from './pages/crud_strategies/customer/customer-list/customer-list.component';
+import { AddUpdateCustomerComponent } from './pages/crud_strategies/customer/add-update-customer/add-update-customer.component';
+import { ViewCustomerComponent } from './pages/crud_strategies/customer/view-customer/view-customer.component';
+import { ProductsComponent } from './pages/crud_strategies/product/products/products.component';
+import { Employee2Component } from './pages/crud_strategies/employee/employee/employee.component';
+import { ResizeDirective } from './shared/directives/resize.directive';
+import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +58,14 @@ import { FormElementWrapperComponent } from './reusable/form-element-wrapper/for
     VoidTableComponent,
     AgGridUseComponent,
     ContentProjectionComponent,
-    FormElementWrapperComponent
+    FormElementWrapperComponent,
+    CustomerListComponent,
+    AddUpdateCustomerComponent,
+    ViewCustomerComponent,
+    ProductsComponent,
+    Employee2Component,
+    ResizeDirective,
+    DynamicTabSelectionComponent
   ],
   imports: [
     BrowserModule,

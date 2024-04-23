@@ -10,6 +10,12 @@ import { UsersComponent } from './pages/users/users.component';
 import { JsonUserComponent } from './pages/json-user/json-user.component';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
+import { CustomerListComponent } from './pages/crud_strategies/customer/customer-list/customer-list.component';
+import { AddUpdateCustomerComponent } from './pages/crud_strategies/customer/add-update-customer/add-update-customer.component';
+import { ViewCustomerComponent } from './pages/crud_strategies/customer/view-customer/view-customer.component';
+import { ProductsComponent } from './pages/crud_strategies/product/products/products.component';
+import { Employee2Component } from './pages/crud_strategies/employee/employee/employee.component';
+import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 
 const routes: Routes = [
   {
@@ -51,6 +57,31 @@ const routes: Routes = [
   {
     path:'content-projection',
     component: ContentProjectionComponent
+  },
+
+  {
+    path:'customerList',
+    component: CustomerListComponent
+  },
+  {
+    path:'addUpdateCustomer/:id',
+    component: AddUpdateCustomerComponent
+  } ,
+  {
+    path:'viewCustomer/:id',
+    component: ViewCustomerComponent
+  },
+  {
+    path:'products',
+    component: ProductsComponent
+  },
+  {
+    path:'employee2',
+    component: Employee2Component
+  },
+  {
+    path:'dynamic-tab',
+    component: DynamicTabSelectionComponent
   }
 ];
 

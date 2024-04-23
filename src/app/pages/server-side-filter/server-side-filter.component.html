@@ -1,94 +1,70 @@
  
- <app-jumbotron [title]="pageTitle" [description]="'Video Explaning Server Side filtrering '"></app-jumbotron>
-<div class="card">
-  <div class="card-header bg-success text-white">
-    Candidate List
-  </div>
-  <div class="card-body">
-    <div class="row">
-      <div class="col-3">
-        <input type="text" class="form-control" [(ngModel)]="filterObj.Name" placeholder="Search By Name">
-      </div>
-      <div class="col-3">
-        <input type="text" class="form-control" [(ngModel)]="filterObj.ContactNo" placeholder="Search By Mobile">
-      </div>
-      <div class="col-3">
-        <input type="text" class="form-control" [(ngModel)]="filterObj.Email" placeholder="Search By Email">
-      </div>
-      <div class="col-3">
-        <app-my-button [text]="'Search'" [btnClass]="'btn-sm btn-success'" (onBtnClick)="filetrCandidates($event)"> </app-my-button>
+<app-jumbotron [title]="pageTitle" [description]="'Video Explaning Server Side filtrering '"></app-jumbotron>
 
-        <!-- <button class="btn btn-sm btn-success" (click)="filetrCandidates()">Search</button> -->
+<div class="row">
+  <div class="col">
+    <div class="resizable-container">
+      <div  appResize class="resizable">
+        <!-- Content here -->
+      </div>
+      <div class="drag-handle">
+    
       </div>
     </div>
-    <div class="row">
-      <div class="col-2">
-        <div class="dataTables_length"><label>Show
-            <select [(ngModel)]="filterObj.PageSize" (change)="filetrCandidates('')">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="20">20</option>
-              <option value="50">50</option>
-              <option value="100">100</option>
-            </select> entries</label>
-        </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-header bg-success text-white">
+        Candidate List
       </div>
-      <div class="col-md-10" style="float:right;text-align: right">
-        <div class="paginations">
-          <div>
-            <div class="btn-group" id="radioBtn">
-              <a class="btn btn-primary btn-sm notActive" (click)="onPrevious()"> Previous </a>
-              <a class="btn btn-primary btn-sm active">{{filterObj.PageNumber}}</a>
-              <a class="btn btn-primary btn-sm notActive" (click)="onNext()">Next </a>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <input type="text" class="form-control" [(ngModel)]="filterObj.Name" placeholder="Search By Name">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" [(ngModel)]="filterObj.ContactNo" placeholder="Search By Mobile">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" [(ngModel)]="filterObj.Email" placeholder="Search By Email">
+          </div>
+          <div class="col-3">
+            <app-my-button [text]="'Search'" [btnClass]="'btn-sm btn-success'" (onBtnClick)="filetrCandidates($event)"> </app-my-button>
+    
+            <!-- <button class="btn btn-sm btn-success" (click)="filetrCandidates()">Search</button> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <div class="dataTables_length"><label>Show
+                <select [(ngModel)]="filterObj.PageSize" (change)="filetrCandidates('')">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select> entries</label>
+            </div>
+          </div>
+          <div class="col-md-10" style="float:right;text-align: right">
+            <div class="paginations">
+              <div>
+                <div class="btn-group" id="radioBtn">
+                  <a class="btn btn-primary btn-sm notActive" (click)="onPrevious()"> Previous </a>
+                  <a class="btn btn-primary btn-sm active">{{filterObj.PageNumber}}</a>
+                  <a class="btn btn-primary btn-sm notActive" (click)="onNext()">Next </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-3 pt-2"  *ngFor="let item of candidates;let index =index"> 
+            <app-list-card [obj]="item"> </app-list-card> 
+          </div>
+        </div> 
       </div>
     </div>
-    <div class="row">
-      <div class="col-3 pt-2"  *ngFor="let item of candidates;let index =index">
-
-        <app-list-card [obj]="item"> </app-list-card>
-        <!-- <div class="card">
-          <div class="card-header bg-secondary" appHighLight>
-            {{item.name}}
-          </div>
-          <div class="card-body"> 
-            <h6 class="card-subtitle mb-2 text-muted">{{item.contactNo}}</h6>
-            <p class="card-text">{{item.email || '--'}}</p>
-            <div class="row">
-              <div class="col-6">
-                <a href="#" class="card-link">{{item.city|| '--'}}</a>
-              </div>
-              <div class="col-6 text-end">
-                <a href="#" class="card-link">{{item.createdDate | date:'dd-MMM-yyyy'}}</a>
-              </div>
-            </div> 
-          </div>
-        </div> -->
-      </div>
-    </div>
-    <!-- <table class="table table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-          <th>Sr No</th>
-          <th>Name</th>
-          <th>Contact</th>
-          <th>Email</th>
-          <th>City</th>
-          <th>Created On</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of candidates;let index =index">
-          <td>{{index+1}}</td>
-          <td>{{item.name || '--'}}</td>
-          <td>{{item.contactNo || '--'}}</td>
-          <td>{{item.email || '--'}}</td>
-          <td>{{item.city|| '--'}}</td>
-          <td>{{item.createdDate | date:'dd-MMM-yyyy'}}</td>
-        </tr>
-      </tbody>
-    </table> -->
   </div>
 </div>
+ 

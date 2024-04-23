@@ -4,11 +4,8 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
   selector: '[appMyTootip]'
 })
 export class MyTootipDirective {
-
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
-  
   @Input('appTooltip') tooltipContent: string = '';
-
   createToolTip(): HTMLElement {
     const tooltip = this.renderer.createElement('div');
     const text =  this.renderer.createText(this.tooltipContent);

@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cust of customerList; let sr= index"> 
+                    <td> 
+                        <input type="text" [(ngModel)]="cust.name"/> 
+                    </td>
+                    <td> {{cust.mobile}}</td>
+                    <td> {{cust.email}}</td>
+                    <td> 
+                        <button [routerLink]="'/viewCustomer/'+cust.id" class="btn btn-primary">View</button>
+                        <button (click)="navigateToEdit(cust.id)" class="btn btn-success">Edit</button>
+                        <button class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<input type="text" [(ngModel)]="stateName$"/> 

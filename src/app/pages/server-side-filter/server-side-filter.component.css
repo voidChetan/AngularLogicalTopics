@@ -1,0 +1,22 @@
+.resizable-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .resizable {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    resize: horizontal;
+    overflow: hidden;
+  }
+  
+  .drag-handle {
+    position: absolute;
+    top: 0;
+    right: -4px; /* Adjust position */
+    width: 8px;
+    height: 100%;
+    cursor: ew-resize;
+    background-color: #ddd;
+  }
