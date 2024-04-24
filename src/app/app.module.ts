@@ -35,6 +35,7 @@ import { ProductsComponent } from './pages/crud_strategies/product/products/prod
 import { Employee2Component } from './pages/crud_strategies/employee/employee/employee.component';
 import { ResizeDirective } from './shared/directives/resize.directive';
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
+import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,8 @@ import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-
     ProductsComponent,
     Employee2Component,
     ResizeDirective,
-    DynamicTabSelectionComponent
+    DynamicTabSelectionComponent,
+    MultpleSelectionComponent
   ],
   imports: [
     BrowserModule,

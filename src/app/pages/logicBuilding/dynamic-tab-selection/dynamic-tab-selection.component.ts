@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class DynamicTabSelectionComponent {
 
+  tabsArray: any [] =[
+    {tabName: 'Basic Details', isEnabled: true},
+    {tabName: 'Project Details', isEnabled: false},
+    {tabName: 'Family Details', isEnabled: true}
+  ]
+
+  activeTab: string = 'Basic';
+
+  setSelectedTab(tab: any) {
+    if(tab.isEnabled) {
+      this.activeTab = tab.tabName;
+    }
+    
+  }
+  
 }

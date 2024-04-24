@@ -1,43 +1,182 @@
-<div class="row">
-    <div class="col-6">
+<div class="bg">
+    <div class="container ">
         <div class="row">
             <div class="col-12">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" id="basic"   href="#">Basic Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="project"   href="#">Project Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" id="family" href="#">Family Details</a>
-                    </li>
-                </ul>
-                <div class="tab-content"> 
-                    <div class="tab-pane container" id="basicDiv">
-                        Basic Details Div
-                    </div>
-                    <div class="tab-pane container" id="projectDiv">
-                        Project Details Div
-                    </div>
-                    <div class="tab-pane container active" id="familyDiv">
-                        Family Details Div
+                <h5>Dynamic Tab Selection - {{activeTab}}</h5>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" [ngClass]="activeTab == 'Basic' ?'active':''" id="basic" (click)="setSelectedTab('Basic')"  >Basic Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="project" [ngClass]="activeTab == 'Project' ?'active':''"  (click)="setSelectedTab('Project')"  >Project Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " [ngClass]="activeTab == 'Family' ?'active':''" id="family" (click)="setSelectedTab('Family')"  >Family Details</a>
+                            </li>
+                        </ul> -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item" *ngFor="let tab of tabsArray" [ngClass]="tab.isEnabled ? '':'bg-secondary'">
+                                <a class="nav-link" [ngClass]="activeTab == tab.tabName?'active':''" id="basic" (click)="setSelectedTab(tab)"  >{{tab.tabName}}</a>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane container active"   *ngIf="activeTab == 'Basic Details'"  id="basicDiv">
+                                Basic Details
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label for="email" class="form-label">First Name:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="email" class="form-label"> Middle Name:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="email" class="form-label">Last Name:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="email" class="form-label">Mobile No:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-5">
+                                        <label for="email" class="form-label">Name:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="email" class="form-label">Email:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="email" class="form-label">Aadhar No:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="email" class="form-label">Social Security No:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                            name="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container active"  *ngIf="activeTab == 'Project Details'"   id="projectDiv">
+                                <div class="row pt-2">
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-header bg-success">
+                                                Banking Erp
+                                            </div>
+                                            <div class="card-body">
+                                                <strong>Project Description:</strong> <small> Lorem Ipsum is simply
+                                                    dummy
+                                                    text of the printing and typesetting industry.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-header bg-success">
+                                                CRM APP
+                                            </div>
+                                            <div class="card-body">
+                                                <strong>Project Description:</strong> <small> Lorem Ipsum is simply
+                                                    dummy
+                                                    text of the printing and typesetting industry.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-header bg-success">
+                                                Forum
+                                            </div>
+                                            <div class="card-body">
+                                                <strong>Project Description:</strong> <small> Lorem Ipsum is simply
+                                                    dummy
+                                                    text of the printing and typesetting industry.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-2">
+                                        <div class="card">
+                                            <div class="card-header bg-success">
+                                                Farm eCommerce
+                                            </div>
+                                            <div class="card-body">
+                                                <strong>Project Description:</strong> <small> Lorem Ipsum is simply
+                                                    dummy
+                                                    text of the printing and typesetting industry.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 pt-2">
+                                        <div class="card">
+                                            <div class="card-header bg-success">
+                                                Emp Payroll
+                                            </div>
+                                            <div class="card-body">
+                                                <strong>Project Description:</strong> <small> Lorem Ipsum is simply
+                                                    dummy
+                                                    text of the printing and typesetting industry.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container active"  *ngIf="activeTab == 'Family Details'"  id="familyDiv">
+                                <div class="row pt-2">
+                                    <div class="col-12">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Relation</th>
+                                                    <th>Age</th>
+                                                    <th>Email</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>John</td>
+                                                    <td>Brother</td>
+                                                    <td>23</td>
+                                                    <td>John@gmail.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mary</td>
+                                                    <td>Sister</td>
+                                                    <td>33</td>
+                                                    <td>Mary@gmail.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>July</td>
+                                                    <td>Mother</td>
+                                                    <td>45</td>
+                                                    <td>July@gmail.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Adam</td>
+                                                    <td>Father</td>
+                                                    <td>50</td>
+                                                    <td>Adam@gmail.com</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="row">
-            <div class="col-12">
-                <ul class="list-group list-group-horizontal" id="myHoobyUl"> 
-                  <li class="list-group-item">Cricket</li><li class="list-group-item bg-success">Online Games</li><li class="list-group-item">Drawing</li><li class="list-group-item">Singing</li></ul>
-            </div>
-            <div class="col-12 pt-3">
-                <button class="btn btn-primary"  >Get Selected Hobbies</button>
-            </div>
-            <div class="col-12">
-                <p id="selectedHobbies"><span>Online Games</span></p>
             </div>
         </div>
     </div>

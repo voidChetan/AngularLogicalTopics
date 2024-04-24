@@ -16,6 +16,7 @@ import { ViewCustomerComponent } from './pages/crud_strategies/customer/view-cus
 import { ProductsComponent } from './pages/crud_strategies/product/products/products.component';
 import { Employee2Component } from './pages/crud_strategies/employee/employee/employee.component';
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
+import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path:'dynamic-tab',
     component: DynamicTabSelectionComponent
+  },
+  {
+    path:'multple-selection',
+    component: MultpleSelectionComponent
   }
 ];
 

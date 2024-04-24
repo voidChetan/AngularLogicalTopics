@@ -1,0 +1,6 @@
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active { 
+    border-color: #175694 #175694 #fff !important;
+}
+.nav-tabs {
+    border-bottom: 1px solid #175694 !important;
+}
