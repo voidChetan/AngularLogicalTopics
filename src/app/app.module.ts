@@ -36,6 +36,7 @@ import { Employee2Component } from './pages/crud_strategies/employee/employee/em
 import { ResizeDirective } from './shared/directives/resize.directive';
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
+import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selecti
     Employee2Component,
     ResizeDirective,
     DynamicTabSelectionComponent,
-    MultpleSelectionComponent
+    MultpleSelectionComponent,
+    JiraBoardComponent
   ],
   imports: [
     BrowserModule,

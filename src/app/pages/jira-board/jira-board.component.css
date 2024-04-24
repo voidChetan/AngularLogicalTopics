@@ -1,0 +1,143 @@
+.mynav  {
+    background-color: #0747a6!important;
+    color: #fff!important;
+}
+.content-hover:hover {
+    background-color: #033681!important;
+}
+.nav-link, .navbar-brand {
+    color: #fff!important;
+}
+        .breadcrumb-Hover:hover {
+            color: darkgrey;
+            text-decoration: underline;
+        }
+
+        .search-Border {
+            height: 40px;
+        }
+
+        .space-board-icon-hover:hover {
+            background-color: lightgrey;
+        }
+
+        .group-By-Font {
+            font-size: 13px;
+        }
+
+        .ct {
+            background-color: blue;
+            border-radius: 17px;
+            width: 34px;
+            padding: 5px;
+        }
+
+        .icon-CT {
+            background-color: lightgray;
+            border-radius: 17px;
+            width: 34px;
+            padding: 5px;
+        }
+
+        .user {
+            background-color: gray;
+            padding: 6px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .user-selected {
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+
+        .card-Height {
+            height: 100%;
+        }
+
+        .card-Body-Hover {
+            background-color: #ffff;
+            padding: 6px;
+            border: 1px solid lightgray;
+            border-bottom: 1px solid gray;
+        }
+
+        #draggable {
+            width: 100px;
+            height: 50px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            cursor: move;
+        }
+
+        #droppable {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            margin-top: 20px;
+        }
+
+        #board {
+            display: flex;
+            gap: 20px;
+        }
+
+        .grabbable {
+            cursor: move;
+            /* fallback if grab cursor is unsupported */
+            cursor: grab;
+            cursor: -moz-grab;
+            cursor: -webkit-grab;
+        }
+
+        /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+        .grabbable:active {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+
+        .column {
+            flex: 1 0 auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .task {
+            background-color: #f5f5f5;
+            padding: 5px;
+            margin-bottom: 10px !important;
+            cursor: move;
+        }
+
+        .card-Body-Hover:hover {
+            background-color: rgba(238, 244, 244, 0.973);
+        }
+
+        .create-Hover:hover {
+            background-color: rgba(238, 244, 244, 0.973);
+            color: rgb(54, 53, 53);
+        }
+
+        .space-font {
+            font-size: 13px;
+        }
+
+        .create-Font {
+            font-size: 15px;
+        }
+
+        .board {
+            position: absolute;
+        }
+
+        .card-body {
+            background-color: #ffff !important;
+            padding: 8px;
+        }
+        .logUser {
+            position: absolute;
+    right: 20px !important;
+        }

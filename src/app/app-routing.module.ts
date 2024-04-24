@@ -17,6 +17,7 @@ import { ProductsComponent } from './pages/crud_strategies/product/products/prod
 import { Employee2Component } from './pages/crud_strategies/employee/employee/employee.component';
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
+import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path:'multple-selection',
     component: MultpleSelectionComponent
+  },
+  {
+    path:'jira-board',
+    component: JiraBoardComponent
   }
 ];
 

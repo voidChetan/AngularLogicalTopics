@@ -1,0 +1,53 @@
+<div class="container-fluid pt-1">
+    <div class="row">
+        <div class="col-3">
+            <label for="">Select Project</label>
+            <select name="" id="" class="form-select" (change)="onProjectChange()" [(ngModel)]="selectedProject">
+                 <option *ngFor="let project of projectsList" [value]="project.projectId"> {{project.projectName}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row pt-1">
+        <div class="col" *ngFor="let status of ticketStatusArray">
+            <div class="card card-bg">
+                <div class="card-header border-0 py-1 bg-success text-white"> {{status.status}} </div>
+                <div class="card-body ticket-bg border" id="3"><!---->
+                    <div draggable="true" *ngFor="let ticket of getTicketsByStatusId(status.statusId)" class="card-Body-Hover m-1 rounded-1 task" id="3">
+                        <div class="my-1 fw-bold"> {{ticket.ticketName}} </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <p class="text-muted space-font m-0 pointer">{{ticket.ticketNo}}</p>
+                            </div>
+                            <div class="col-9 text-end">
+                                <p class="text-muted space-font m-0">{{ticket.assignedTo}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-end"><span>5 hrs</span></div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title"><svg class="svg-inline--fa fa-square-check" aria-hidden="true"
+                            focusable="false" data-prefix="fas" data-icon="square-check" role="img"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z">
+                            </path>
+                        </svg><!-- <i  class="fa fa-square-check"></i> Font Awesome fontawesome.com -->
+                    </h6><button type="button" data-bs-dismiss="modal" class="btn-close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row"><!----></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
