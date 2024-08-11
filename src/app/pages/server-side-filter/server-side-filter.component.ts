@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+ 
 
 @Component({
   selector: 'app-server-side-filter',
@@ -22,7 +23,7 @@ export class ServerSideFilterComponent implements OnInit {
   ngOnInit(): void {
     this.filetrCandidates('');
   }
-
+ 
   onPrevious() {
     this.filterObj.PageNumber --;
     this.filetrCandidates('');

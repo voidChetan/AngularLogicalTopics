@@ -38,10 +38,18 @@ export class AgGridUseComponent implements OnInit {
     this.getUser();
   }
   onGridReady(event: GridReadyEvent<any>) {
+    debugger;
     this.gridApi = event.api;
   }
 
   onBtExport() {
+    this.exportGrid();
+  }
+
+  exportGrid() {
+    this.expertAsCSV()
+  }
+  expertAsCSV() {
     this.gridApi.exportDataAsCsv();
   }
 

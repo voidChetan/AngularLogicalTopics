@@ -1,0 +1,8 @@
+<div class="entry">
+    <small *ngIf="!isLast()" class="small" ></small>
+    <small *ngIf="isLast()" class="small-domw" ></small>
+    <span>{{ employee.name }}</span>
+    <div class="branch">
+      <app-subordinates *ngFor="let subEmployee of getSubordinates()" [employee]="subEmployee" [employeeList]="employeeList"></app-subordinates>
+    </div>
+</div>

@@ -9,12 +9,14 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "strictPropertyInitialization": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports":true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
@@ -30,5 +32,9 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/html2pdf.d.ts"
+  ]
 }

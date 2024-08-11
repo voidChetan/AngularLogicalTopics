@@ -37,6 +37,9 @@ import { ResizeDirective } from './shared/directives/resize.directive';
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
 import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
+import { TreeComponent } from './pages/tree/tree.component';
+import { OrganizationTreeComponent } from './reusable/organization-tree/organization-tree.component';
+import { SubordinatesComponent } from './reusable/subordinates/subordinates.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +72,10 @@ import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
     ResizeDirective,
     DynamicTabSelectionComponent,
     MultpleSelectionComponent,
-    JiraBoardComponent
+    JiraBoardComponent,
+    TreeComponent,
+    OrganizationTreeComponent,
+    SubordinatesComponent
   ],
   imports: [
     BrowserModule,

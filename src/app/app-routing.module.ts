@@ -18,6 +18,7 @@ import { Employee2Component } from './pages/crud_strategies/employee/employee/em
 import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-selection/dynamic-tab-selection.component';
 import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
 import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
+import { TreeComponent } from './pages/tree/tree.component';
 
 const routes: Routes = [
   {
@@ -92,6 +93,9 @@ const routes: Routes = [
   {
     path:'jira-board',
     component: JiraBoardComponent
+  },{
+    path:'tree',
+    component: TreeComponent
   }
 ];
 

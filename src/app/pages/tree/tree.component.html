@@ -1,0 +1,32 @@
+<!-- <div id="tree">
+    <div class="branch">
+        <ng-container *ngFor="let employee of employeeList">
+            <div class="entry" *ngIf="employee.lead === 0"><span>{{employee.name}}</span>
+                <app-subordinates [employeeList]="employeeList" [lead]="employee.empId"></app-subordinates>
+                
+            </div>
+        </ng-container>
+       
+      
+    </div>
+</div>
+<div class="tree-chart">
+    <ul>
+      <ng-container *ngFor="let employee of employeeList">
+        <li *ngIf="employee.lead === 0">
+          <span>{{ employee.name }}</span>
+          <app-subordinates [employeeList]="employeeList" [lead]="employee.empId"></app-subordinates>
+        </li>
+      </ng-container>
+    </ul>
+  </div> -->
+
+  <div id="tree">
+    <div class="branch">
+      <ng-container *ngFor="let employee of employeeList">
+        <ng-container *ngIf="employee.lead === 0">
+          <app-subordinates [employee]="employee" [employeeList]="employeeList"></app-subordinates>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
