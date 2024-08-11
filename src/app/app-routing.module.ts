@@ -19,6 +19,8 @@ import { DynamicTabSelectionComponent } from './pages/logicBuilding/dynamic-tab-
 import { MultpleSelectionComponent } from './pages/logicBuilding/multple-selection/multple-selection.component';
 import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
 import { TreeComponent } from './pages/tree/tree.component';
+import { InlineWithAPIComponent } from './pages/inlineEditing/inline-with-api/inline-with-api.component';
+import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-update/inline-bulk-update.component';
 
 const routes: Routes = [
   {
@@ -96,6 +98,12 @@ const routes: Routes = [
   },{
     path:'tree',
     component: TreeComponent
+  },{
+    path:'inline-api',
+    component: InlineWithAPIComponent
+  },{
+    path:'inline-bulk-update',
+    component: InlineBulkUpdateComponent
   }
 ];
 

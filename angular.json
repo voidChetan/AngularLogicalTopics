@@ -31,8 +31,7 @@
               "src/styles.css"
             ],
             "scripts": [ 
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./node_modules/html2pdf.js/dist/html2pdf.bundle.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {

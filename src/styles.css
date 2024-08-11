@@ -228,3 +228,14 @@
   margin-top: 1px;
   border-radius: 10px 0 0 0;
 }
+.table {
+  border-color: #3b71a8 !important;
+}
+
+.table  td,th {
+  border-width: 2px !important;
+  border-color: #3b71a8 !important;
+}
+.form-control {
+  border: 1px solid #505253 !important; 
+}

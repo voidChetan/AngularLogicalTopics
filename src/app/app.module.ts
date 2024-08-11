@@ -40,6 +40,8 @@ import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
 import { TreeComponent } from './pages/tree/tree.component';
 import { OrganizationTreeComponent } from './reusable/organization-tree/organization-tree.component';
 import { SubordinatesComponent } from './reusable/subordinates/subordinates.component';
+import { InlineWithAPIComponent } from './pages/inlineEditing/inline-with-api/inline-with-api.component';
+import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-update/inline-bulk-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +77,9 @@ import { SubordinatesComponent } from './reusable/subordinates/subordinates.comp
     JiraBoardComponent,
     TreeComponent,
     OrganizationTreeComponent,
-    SubordinatesComponent
+    SubordinatesComponent,
+    InlineWithAPIComponent,
+    InlineBulkUpdateComponent
   ],
   imports: [
     BrowserModule,

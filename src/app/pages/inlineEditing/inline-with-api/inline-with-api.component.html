@@ -1,0 +1,55 @@
+<div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
+  <h1>Inline Table Editing </h1>
+  <h3>CRUD with API </h3>
+</div>
+<div class="row">
+  <div class="col-12 text-end">
+    <button class="btn btn-success btn-sm" (click)="addNew()">Add New</button>
+  </div>
+</div>
+<div class="row pt-2">
+  <div class="col">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No </th>
+          <th>Department Name</th>
+          <th>Department Logo Url</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of departmentList; let sr= index">
+          <td> {{sr+1}}</td>
+          <td>
+            <div *ngIf="item.isEdit">
+              <input type="text" placeholder="Enter.." [(ngModel)]="item.departmentName" class="form-control" />
+            </div>
+            <div *ngIf="!item.isEdit"> 
+              {{item.departmentName}}
+            </div> 
+          </td>
+          <td>
+            <div *ngIf="item.isEdit">
+              <input type="text" placeholder="Enter.." [(ngModel)]="item.departmentLogo" class="form-control" />
+            </div>
+            <div *ngIf="!item.isEdit"> 
+              {{item.departmentLogo}}
+            </div>  
+          </td>
+          <td> 
+            <div *ngIf="item.isEdit">
+              <button class="btn btn-success btn-sm" *ngIf="item.departmentId !==0" (click)="onUpdate(item)" >Update</button>
+              <button class="btn btn-success btn-sm" *ngIf="item.departmentId ===0" (click)="onNewCreate(item)" >Save</button>
+              <button class="btn btn-secondary btn-sm mx-1"(click)="onCancel(item)" >Cancel</button>
+            </div>
+            <div *ngIf="!item.isEdit">
+              <button class="btn btn-primary btn-sm" (click)="onEdit(item)">Edit</button>
+              <button class="btn btn-danger btn-sm mx-1" >Delete</button>
+            </div> 
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
