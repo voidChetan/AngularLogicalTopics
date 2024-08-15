@@ -21,6 +21,7 @@ import { JiraBoardComponent } from './pages/jira-board/jira-board.component';
 import { TreeComponent } from './pages/tree/tree.component';
 import { InlineWithAPIComponent } from './pages/inlineEditing/inline-with-api/inline-with-api.component';
 import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-update/inline-bulk-update.component';
+import { ServerSidePaginationComponent } from './pages/server-side-pagination/server-side-pagination.component';
 
 const routes: Routes = [
   {
@@ -104,6 +105,9 @@ const routes: Routes = [
   },{
     path:'inline-bulk-update',
     component: InlineBulkUpdateComponent
+  },{
+    path:'server-side-pagination',
+    component: ServerSidePaginationComponent
   }
 ];
 

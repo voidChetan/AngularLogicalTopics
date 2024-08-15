@@ -1,0 +1,79 @@
+<app-jumbotron [title]="'Server Side Filter'" [description]="'Server Side Filter + Pagination + Sorting'"></app-jumbotron>
+<div class="container mt-2">
+  <div class="row mb-2">
+    <div class="col-md-12"> 
+        <div class="row">
+          <div class=" col-md-3">
+            <label for="category">Category</label>
+            <input  type="text" placeholder="Search By Category"  [(ngModel)]="categoryName" class="form-control" />
+          </div>
+          <div class=" col-md-3">
+            <label for="category">Product Name</label>
+            <input type="text" placeholder="Search By Product"  [(ngModel)]="productName" class="form-control"/>
+          </div>
+          <div class=" col-md-3">
+            <label for="productId">Product Id</label>
+            <input type="text" placeholder="Search By Id"  [(ngModel)]="productId" class="form-control" />
+          </div>
+          <div class=" col-md-2 align-self-end">
+            <button type="button" (click)="onSearch()" class="btn btn-primary" >Search</button>
+            <button type="button" (click)="onSearch()" class="btn btn-danger mx-2" >Reset</button>
+          </div>
+          <div class="col-2">
+           
+          </div>
+        </div> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="width:10%" (click)="onSort('productId')">Product Id</th>
+            <th (click)="onSort('productName')">Product Name</th>
+            <th (click)="onSort('shortName')">Short Name</th>
+            <th (click)="onSort('category')">Category</th>
+            <th (click)="onSort('price')">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productList">
+            <td style="width:10%">{{product.productId}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.shortName}}</td>
+            <td>{{product.category}}</td>
+            <td>{{product.price}}</td>
+          </tr>
+        </tbody>
+      </table> 
+      <div class="row"> 
+        <div class="col-11 text-end">
+          <nav>
+            <ul class="pagination">
+              <li class="page-item" [class.disabled]="pageNumber ==1">
+                <a class="page-link" (click)="onPageChnage(pageNumber-1)">Previous</a>
+              </li>
+              <li class="page-item" [class.active]="page == pageNumber" *ngFor="let page of getPageNumbers()">
+                <a class="page-link" (click)="onPageChnage(page)">{{page}}</a>
+              </li>
+               
+              <li class="page-item" [class.disabled]="pageNumber == getValue()">
+                <a class="page-link" (click)="onPageChnage(pageNumber+1)">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-1"> 
+          <select class="form-select" [(ngModel)]="pageSize" (change)="onSearch()">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

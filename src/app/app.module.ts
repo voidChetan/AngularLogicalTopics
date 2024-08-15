@@ -42,6 +42,7 @@ import { OrganizationTreeComponent } from './reusable/organization-tree/organiza
 import { SubordinatesComponent } from './reusable/subordinates/subordinates.component';
 import { InlineWithAPIComponent } from './pages/inlineEditing/inline-with-api/inline-with-api.component';
 import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-update/inline-bulk-update.component';
+import { ServerSidePaginationComponent } from './pages/server-side-pagination/server-side-pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-upd
     OrganizationTreeComponent,
     SubordinatesComponent,
     InlineWithAPIComponent,
-    InlineBulkUpdateComponent
+    InlineBulkUpdateComponent,
+    ServerSidePaginationComponent
   ],
   imports: [
     BrowserModule,
