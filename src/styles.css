@@ -242,3 +242,15 @@
 .form-select {
   border: 1px solid #505253 !important; 
 }
+.myBox {
+  border: 1px solid teal;
+  padding: 10px;
+  min-height:300px;
+  height: max-content;
+  background-color: #ffff;
+}
+@media only screen and (max-width: 600px) {
+  .myBox {
+      margin-top: 100px;
+  }
+}

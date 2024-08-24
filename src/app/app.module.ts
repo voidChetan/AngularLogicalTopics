@@ -43,7 +43,9 @@ import { SubordinatesComponent } from './reusable/subordinates/subordinates.comp
 import { InlineWithAPIComponent } from './pages/inlineEditing/inline-with-api/inline-with-api.component';
 import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-update/inline-bulk-update.component';
 import { ServerSidePaginationComponent } from './pages/server-side-pagination/server-side-pagination.component';
-@NgModule({
+import { PlanSelectionComponent } from './pages/Logic-Development/plan-selection/plan-selection.component';
+import { TrainBookingComponent } from './pages/Logic-Development/train-booking/train-booking.component';
+ @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
@@ -81,7 +83,9 @@ import { ServerSidePaginationComponent } from './pages/server-side-pagination/se
     SubordinatesComponent,
     InlineWithAPIComponent,
     InlineBulkUpdateComponent,
-    ServerSidePaginationComponent
+    ServerSidePaginationComponent,
+    PlanSelectionComponent,
+    TrainBookingComponent 
   ],
   imports: [
     BrowserModule,

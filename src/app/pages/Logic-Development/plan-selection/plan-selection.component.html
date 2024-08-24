@@ -1,0 +1,110 @@
+<app-jumbotron [title]="'Logic Development'" [description]="'Task-1'"></app-jumbotron> 
+<div class="container pt-2"> 
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-6 col-sm-12 pb-6">
+            <div class="myBox">
+                <div class="text-center pb-5">
+                    <h3> Package</h3>
+                </div>
+                <!-- <div class="row text-center pb-3">
+                    <div class="col-4">
+                        <div>
+                            <i style="font-size: 7rem;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                            Mobile
+                        </div>
+                        <button class="btn  mt-4" [ngClass]="currentSelectedPlan == 'Mobile' ? 'btn-success':'btn-primary' " 
+                        (click)="setSelectedPlan('Mobile')" id="btnMobile">Find More</button>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            <i style="font-size: 7rem;" class="fa fa-home" aria-hidden="true"></i><br>
+                            JioFiber
+                        </div>
+                        <button class="btn mt-4" [ngClass]="currentSelectedPlan == 'Fiber' ? 'btn-success':'btn-primary' " 
+                        (click)="setSelectedPlan('Fiber')" id="btnFiber">Find More</button>
+                    </div>
+                    <div class="col-4">
+                        <div>
+                            <i style="font-size: 7rem;" class="fa fa-id-badge" aria-hidden="true"></i><br>
+                            Business
+                        </div>
+                        <button class="btn  mt-4" [ngClass]="currentSelectedPlan == 'Business' ? 'btn-success':'btn-primary' " 
+                        (click)="setSelectedPlan('Business')" 
+                          id="btnBusiness">Find More</button>
+                    </div>
+                </div> -->
+                <div class="row text-center pb-3">
+                    <div class="col" *ngFor="let item of planArray">
+                        <div>
+                            <i style="font-size: 7rem;" class="fa fa-mobile" aria-hidden="true"></i><br>
+                            {{item.planName}}
+                        </div>
+                        <button class="btn  mt-4" [ngClass]="currentPlan.planName == item.planName ? 'btn-success':'btn-primary' " 
+                        (click)="setCurrentPlan(item)" id="btnMobile">Find More</button>
+                    </div>
+                </div>
+                <div class="row pt-0">
+                    <div class="col-12">
+                        <div class="text-center"  >
+                            <p>{{currentPlan.planDescription}}</p>
+                            
+                        </div>
+                        <!-- <div class="text-center" *ngIf="currentSelectedPlan == 'Mobile'"  >
+                            <p>Free SIM, calls, and SMS with invaluable digital experiences.</p>
+                            <p>2000/month</p>
+                        </div>
+                        <div class="text-center" *ngIf="currentSelectedPlan == 'Fiber'">
+                            <p> Connected living experiences with superfast home internet.</p>
+                            <p>1500/month</p>
+                        </div>
+                        <div class="text-center" *ngIf="currentSelectedPlan == 'Business'">
+                            <p>Enterprise-grade digital services to meet all your business needs.</p>
+                            <p>4000/month</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+            <div class="myBox" style="position: relative;">
+                <div class="text-center pb-5">
+                    <h3> Plan Selection</h3>
+                </div>
+ 
+                <div class="row text-center">
+                    <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                        <label>Mobile Plan </label><br />
+                        <input type="radio" [(ngModel)]="currentPackage" name="radioCheck" id="radio4" value="Mobile Plan">
+                    </div>
+                    <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                        <label>Fibre Optics </label><br />
+                        <input type="radio"  [(ngModel)]="currentPackage" name="radioCheck" id="radio3" value="Fibre Optics">
+                    </div>
+                    <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                        <label>Broadband</label> <br />
+                        <input type="radio"  [(ngModel)]="currentPackage" name="radioCheck" id="radio1" value="Broadband">
+                    </div>
+                    <div class="col-md-3 col-3 col-sm-3 col-lg-3">
+                        <label>Business</label><br />
+                        <input type="radio"  [(ngModel)]="currentPackage" name="radioCheck" id="radio2" value="Broadband n Tv">
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-6 text-end">
+                        <button class="btn btn-success btn-sm" (click)="onContine()" id="btnContinue"> Continue</button>
+                    </div>
+                    <div class="col-6 ">
+                        <button class="btn btn-danger btn-sm" id="btnReset"> Reset</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>Selected Plan : <strong id="selectedPlan" *ngIf="isContinue">{{currentSelectePackeg}}</strong> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

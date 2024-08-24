@@ -1,0 +1,57 @@
+<app-jumbotron [title]="'Logic Development'" [description]="'Task-2 - Ticket Booking Form'"></app-jumbotron> 
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-6 col-sm-12">
+        <div class="myBox">
+            <div class="text-center">
+                <h3>Train Booking Form</h3>
+            </div> 
+            
+            <div class="row"> 
+                <div class="col-5 col-sm-5 col-md-5">
+                    <label for=""> From Station</label>
+                    <select [(ngModel)]="journeyDetails.fromStation" id="dpdlFrom" class="form-control">
+                        <option value="">From Station</option>
+                        <option *ngFor="let city of cityList" >{{city}}</option>
+                    </select> 
+                </div>
+                <div class="col-2 col-sm-2 col-md-1 pt-4 text-center">
+                    <i class="fa fa-exchange" id="exchange" aria-hidden="true"></i>
+                </div>
+                <div class="col-5 col-sm-5 col-md-5">
+                    <label for=""> To Station</label>
+                    <select [(ngModel)]="journeyDetails.toStation" id="dpdlTo" class="form-control">
+                        <option value="">To Station</option>
+                        <option *ngFor="let city of cityList" >{{city}}</option>
+                    </select>
+                </div>
+                
+                <div class="col-6 col-sm-6 col-md-5">
+                    <label for="">Journey Date</label>
+                    <input type="date"  [(ngModel)]="journeyDetails.dateOfTravel" id="txtDate" class="form-control">
+                </div>
+                <div class="col-6 col-sm-6 col-md-5">
+                    <button class="btn btn-sm btn-primary mt-4 mx-2" id="btnSearch" (click)="onSearch()">Search</button>
+                    <button (click)="onReset()" class="btn btn-sm btn-success mt-4" id="btnClear">Clear</button>
+                </div>
+            </div>
+            <div class="row pt-5 journey" *ngIf="isFormValid">
+                <div class="col-8">
+                    <h4>Selected Journey Details</h4>
+                </div>
+            </div>
+            <div class="row journey" *ngIf="isFormValid">
+                <div class="col-4 col-sm-4 col-md-4">
+                     Date: <strong id="dateText"> {{dateOfTravel}}</strong>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4">
+                    From: <strong id="fromText"> {{fromStation}}</strong>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4">
+                    From: <strong id="toText"> {{toStation}}</strong>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
