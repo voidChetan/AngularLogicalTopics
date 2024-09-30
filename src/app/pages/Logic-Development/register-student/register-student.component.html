@@ -1,0 +1,99 @@
+<div class="container-fluid pt-1">
+    <div class="row">
+        <div class="col-9">
+            <form  [formGroup]="studentForm"> 
+            <div class="myBox">
+                <div class="text-center">
+                    <h3>Student Registration Form</h3>
+                </div>
+                <div class="row">
+                    <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <label >First Name</label>
+                        <input type="text" formControlName="fName" class="form-control"  >
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <label >Middle Name</label>
+                        <input type="text" formControlName="mName" class="form-control"  >
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-3 col-lg-3">
+                        <label >Last Name</label>
+                        <input type="text" formControlName="lName" class="form-control"  >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 col-md-4 col-sm-8">
+                        <label >Full Name</label>
+                        <input type="text" readonly formControlName="fullName" class="form-control"  >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <label >Select Caste</label>
+                        <select formControlName="caste"    class="form-select">
+                            <option value="">Select Caste</option>
+                            <option value="obc">OBC</option>
+                            <option value="open">OPEN</option>
+                            <option value="sc-nt">SC-NT</option>
+                            <option value="other">OTHER</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3"  *ngIf="studentForm.controls['caste'].value == 'other'">
+                        <label >Enter Other Caste</label>
+                        <input type="text" formControlName="otherCaste" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <label >Enter 10th %</label>
+                        <input type="text" formControlName="tenth" class="form-control" >
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <label >Enter 12th %</label>
+                        <input type="text" formControlName="twelth" class="form-control" >
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <label > Graduation %</label>
+                        <input type="text" formControlName="graduation" class="form-control" >
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <label >Avarage</label>
+                        <input type="text"readonly formControlName="avarage" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <label >Mobile</label>
+                        <input type="text" formControlName="mobile" class="form-control">
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                        <label >Registration No</label>
+                        <input type="text" readonly formControlName="regNo" class="form-control">
+                    </div>
+                </div> 
+                <div class="row pt-4 pb-3">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-4 text-center">
+                        <button class="btn btn-secondary">Reset Form</button>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-4 text-center">
+                        <button class="btn btn-success">Save Student</button>
+                    </div>
+                </div> 
+            </div>
+        </form>
+        </div> 
+        <div class="col-3">
+            <div class="mt-1 mb-2 p-3 bg-success text-white rounded text-center">
+                <h3>Logic Development </h3>
+                <h5> Reactive Form </h5>
+            </div>
+            <ul>
+                <li>Create Full name using fName,mName,lName</li>
+                <li>if caste other is selecetd then only show Other caste textbox</li>
+                <li>calculate avarage % of 10th, 12th & graduation and show in avarage textbox</li>
+                <li>create Registration no by using firstname + last 4 digit of mobile no mean <br>if name is
+                    chetan & mobile no is 1122334455 so registration no will be <strong>chetan4455</strong>
+                </li>
+            </ul>
+        </div>
+    </div> 
+</div>

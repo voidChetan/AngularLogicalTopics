@@ -45,6 +45,10 @@ import { InlineBulkUpdateComponent } from './pages/inlineEditing/inline-bulk-upd
 import { ServerSidePaginationComponent } from './pages/server-side-pagination/server-side-pagination.component';
 import { PlanSelectionComponent } from './pages/Logic-Development/plan-selection/plan-selection.component';
 import { TrainBookingComponent } from './pages/Logic-Development/train-booking/train-booking.component';
+import { MovieBookingComponent } from './pages/Logic-Development/movie-booking/movie-booking.component';
+import { GrossaryCartComponent } from './pages/Logic-Development/grossary-cart/grossary-cart.component';
+import { RegisterStudentComponent } from './pages/Logic-Development/register-student/register-student.component';
+import { EncriptDecriptComponent } from './pages/Logic-Development/encript-decript/encript-decript.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +89,11 @@ import { TrainBookingComponent } from './pages/Logic-Development/train-booking/t
     InlineBulkUpdateComponent,
     ServerSidePaginationComponent,
     PlanSelectionComponent,
-    TrainBookingComponent 
+    TrainBookingComponent,
+    MovieBookingComponent,
+    GrossaryCartComponent,
+    RegisterStudentComponent,
+    EncriptDecriptComponent 
   ],
   imports: [
     BrowserModule,

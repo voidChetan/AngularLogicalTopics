@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+    <div class="myBox">
+        <div class="text-center">
+            <h3>Logic Development Task -Part 4 </h3>
+            <h5>Grocery Cart</h5>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                        <select [(ngModel)]="cartObj.itemId" id="dpdlItem" class="form-control">
+                            <option value="">Select Item</option>
+                            <option *ngFor="let item of foodItemList" [value]="item.itemId">{{item.itemName}}-({{item.cost}}) </option>
+                            
+                        </select>
+                    </div>
+                    <div class="col-5 col-md-5 col-sm-5 col-lg-5">
+                        <input [(ngModel)]="cartObj.quantity" type="text" id="txtQuantity" class="form-control" placeholder="Enter Quantity">
+                    </div>
+                    <div class="col-2  col-md-2 col-sm-2 col-lg-2">
+                        <button class="btn btn-sm btn-success" id="btnAdd" (click)="onAddItem()">Add </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-12">
+                <table class="table table-bordered" id="tableItems">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngIf="selectedFoodItemList.length ==0">
+                            <tr>
+                                <td colspan="3">No Item Added Yet</td>
+                            </tr>
+                        </ng-container>
+                        <ng-container *ngIf="selectedFoodItemList.length !==0">
+                            <tr *ngFor="let item of selectedFoodItemList;let sr=index">
+                                <td>{{sr+1}}</td>
+                                <td>{{item.itemName}}  </td>
+                                <td class="text-end">{{item.cost}} * {{item.quantity}} = {{item.cost * item.quantity}} </td>
+                            </tr>
+                        </ng-container>
+                     
+                         
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="text-end bg-secondary" colspan="2">Total</td>
+                            <td class="text-end bg-secondary">
+                                <strong id="tot">{{totalCost}}</strong>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="container pt-1">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="myBox">
+                <div class="text-center">
+                    <h3>Movie Ticket Booking</h3>
+                </div>
+
+
+                <div class="container">
+                    <div class="row text-center" id="divMovies">
+
+                        <div *ngFor="let movie of movieList" (click)="onSelectMovie(movie)" class="col-6 col-md-3 col-sm-6 col-lg-3 pt-2" >
+                            <div class="card" >
+                                <div class="card-header" [ngClass]="movie.movieName == selectedMovie.movieName ? 'bg-success':''"> {{movie.movieName}}: </div>
+                                <div class="card-body"
+                                    [title]="movie.description">
+                                    {{movie.description | slice:0-90}}... </div>
+                                <div class="card-footer">₹ {{movie.ticketRate}} </div>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+                <hr>
+                <div class="container">
+                    <h5>Available shows :</h5>
+                </div>
+
+                <div class="container">
+                    <div class="row" id="divShows">
+                        <div *ngFor="let show of selectedMovie.shows" class="col-6 col-md-2 col-sm-3 col-lg-2 pt-2">
+                             <button class="btn btn-sm btn-time "
+                              [ngClass]="selectedShow == show ?'btn-success':'btn-secondary'" (click)="onSelectShow(show)">{{show}}</button>
+                        </div>
+                     
+                    </div>
+                </div>
+
+                <div class="container ticketDiv pt-2"  *ngIf="selectedShow !== ''">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6">
+                            <div class="row">
+                                <div class="col-8 col-md-7 col-sm-8 col-lg-7">
+                                    <input type="text" id="txtNoOfTicket" class="form-control"
+                                        placeholder="No Of Tickets" [(ngModel)]="noOfTicket">
+                                </div>
+                                <div class="col-4 col-md-5 col-sm-4 col-lg-5">
+                                    <button class="btn btn-primary" id="btnBook" (click)="onBookTicket()">Book </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6  col-sm-6 col-md-6">
+                            <p> Movie: <strong id="selecetdMoview"> {{selectedMovie.movieName}}</strong></p>
+                            <p> ( <strong id="selecetdShow">  {{selectedShow}}</strong>)</p>
+                            <p>For <span id="noticket"></span> Cost will Be <strong id="totalAmount">{{totalAmount}}</strong></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="padding-bottom: 200px;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

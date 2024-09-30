@@ -2,7 +2,7 @@
 (click)="onBtExport()"
 style="margin-bottom: 5px; font-weight: bold;"
 >
-Export to Excel
+Export to Excel - {{isEdit}}
 </button>
 <div class="row">
     <div class="col-12">
@@ -15,6 +15,7 @@ Export to Excel
         [suppressRowClickSelection]="true"
         [pagination]="true"
         [paginationPageSizeSelector]="[5,10,20,50,100,500]"
+        (cellClicked)="onCellClicked($event)"
         >
         </ag-grid-angular>
     </div>

@@ -22,17 +22,38 @@ export class AgGridUseComponent implements OnInit {
     { field: "name", headerName: 'Name',filter:'agTextColumnFilter' },
     { field: "username", headerName:'User Name' },
     { field: "email" ,headerName:'E-mail', editable: true},
+    {
+      headerName: 'Actions',
+      cellRenderer: this.actionCellRenderer
+    }
    
   ];
-
+ 
   defaultColDef = {
     flex:1,
     minWdith:100
   }
 
+  isEdit: boolean = false;
   constructor(private http: HttpClient){
 
   }
+  actionCellRenderer(params: any) {
+    return `
+      <button class="btn-edit" data-action="edit" data-id="${params.data.id}">Edit</button>
+    `;
+  }
+  onCellClicked(event: any) {
+    if (event.colDef.headerName === 'Actions' && event.event.target.dataset.action === 'edit') {
+      this.handleEditClick(event.data);
+    }
+  }
+  handleEditClick(rowData: any) {
+    console.log('Edit button clicked for:', rowData);
+    this.isEdit = true;
+    // Add your logic here to handle the edit action, like opening a form or a modal
+  }
+
 
   ngOnInit(): void {
     this.getUser();
