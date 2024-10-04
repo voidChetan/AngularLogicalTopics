@@ -16,6 +16,7 @@ export class CustomerListComponent {
     {id:4,name:'Ram',mobile:'9999888877', email:'chetan@gmail.com'},
     {id:5,name:'shyam',mobile:'9999888877', email:'chetan@gmail.com'}
   ] 
+  
 
   stateName$: Observable<string>;
   

@@ -12,6 +12,8 @@ export class ContentProjectionComponent {
     fname: '',
     lName: '',
     userName: '',
-    city: ''
+    city: '',
   }
+ 
+  
 }
