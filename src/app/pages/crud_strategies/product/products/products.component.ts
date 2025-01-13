@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
+  productCategory:string= ''
   customerList: any [] = [
     {id:1,name:'Sachin',mobile:'9999888877', email:'chetan@gmail.com'},
     {id:2,name:'Rahul',mobile:'9999888877', email:'chetan@gmail.com'},
@@ -31,5 +32,17 @@ export class ProductsComponent {
     if(model != null) {
       model.style.display = 'none'
     }
+  }
+
+  showMobileDiv(){
+this.productCategory == 'mobDiv'
+  }
+
+  showLaptopDiv(){
+    
+  }
+
+  showCameraDiv(){
+    
   }
 }

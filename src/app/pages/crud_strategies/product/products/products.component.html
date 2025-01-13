@@ -71,3 +71,33 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+            <div class="col-4"  >
+                <div class="bg-success p-2 catagory" [(ngModel)]="productCategory"  (click)="showMobileDiv()">
+                    Mobile
+                </div> 
+            </div>
+            <div class="col-4 ">
+                <div class="bg-danger p-2 catagory"  (click)="showLaptopDiv()">
+                    Laptop
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="bg-secondary p-2 catagory" (click)="showCameraDiv()">
+                    Camera
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center p-2" id="mobDiv"  *ngIf="productCategory">
+                Samsumg, Sony, Motorola, Micromax
+            </div>
+            <div class="col-12 text-center p-2" id="laptopDiv" *ngIf="productCategory">
+                Sony, Lenovo, Hp, Acer
+            </div>
+            <div class="col-12 text-center p-2" id="cameraDiv" *ngIf="productCategory">
+                Sony, Philips
+            </div>
+        </div>
+    
