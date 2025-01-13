@@ -110,9 +110,6 @@ import { EncriptDecriptComponent } from './pages/Logic-Development/encript-decri
       multi:true
     }
   ],
-  entryComponents:[
-    UsersComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
