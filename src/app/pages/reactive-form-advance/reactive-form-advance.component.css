@@ -1,0 +1,28 @@
+.form-label {
+    margin-bottom: 0rem !important;
+}
+
+.checkbox
+{
+    height: 18px;
+    width: 18px;
+}
+
+.heading {
+    color: #1e3c72 !important;
+}
+
+.addmore {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1)"
+
+}
+
+.form-control::placeholder {
+    font-size: 16px;
+}
+
+i {
+    color: #1e3c72 !important;
+}

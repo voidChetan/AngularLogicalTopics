@@ -1,0 +1,249 @@
+<div class="container my-4 p-4 shadow rounded bg-light">
+    <h2 class="mb-3 fw-bold text-center heading">
+        <span> <i class="bi bi-bank2"></i></span>
+        Bank Application
+        <span> <i class="bi bi-bank2"></i></span>
+    </h2>
+    <form [formGroup]="applicationForm">
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="mb-3 text-primary fw-bold heading">Personal Details</h3>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i class="bi bi-person-fill"></i></span>
+                                <input id="firstName"  formControlName="fName"  class="form-control border-2"
+                                    placeholder="Enter your first name" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="middleName" class="form-label">Middle Name</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i
+                                        class="bi bi-person-lines-fill"></i></span>
+                                <input id="middleName"  formControlName="mName"  class="form-control border-2" type="text"
+                                    placeholder="Enter your middle name" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i
+                                        class="bi bi-person-badge-fill"></i></span>
+                                <input id="lastName"  formControlName="lName"  class="form-control border-2" type="text"
+                                    placeholder="Enter your last name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3 mt-3">
+                        <div class="col-md-7">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input id="fullName"  formControlName="fullName" class="form-control border-2 shadow-sm"
+                                placeholder="Enter your full name" />
+                        </div>
+                    </div>
+                    <hr>
+                    <h3 class="mb-3 text-primary fw-bold heading">Job Details</h3>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label for="isWorking" class="form-label">Is Working</label>
+                            <select id="isWorking"  formControlName="isWorking"  class="form-select border-2 shadow-sm">
+                                <option value="">Select...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="jobType" class="form-label">Select Job Type</label>
+                            <select id="jobType"  formControlName="jobType"  class="form-select border-2 shadow-sm">
+                                <option value="">Select...</option>
+                                <option value="Government Job">Government Job</option>
+                                <option value="Private Job">Private Job</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="business" class="form-label">Do you Own a Business</label>
+                            <select id="business"  formControlName="isOwnBusiness"  class="form-select border-2 shadow-sm">
+                                <option value="">Select...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row mt-3" formGroupName="companyDetails">
+                        <div class="col-md-4">
+                            <label for="company" class="form-label">Company</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
+                                <input id="company"  formControlName="companyName"  class="form-control border-2"
+                                    placeholder="Enter your company name" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="position" class="form-label">Position</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i
+                                        class="bi bi-person-workspace"></i></span>
+                                <input id="position"  formControlName="postion"  class="form-control border-2"
+                                    placeholder="Enter your position" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="salary" class="form-label">Salary</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i class="bi bi-currency-dollar"></i></span>
+                                <input id="salary"  formControlName="salary"  class="form-control border-2" placeholder="Enter your salary" />
+                            </div>
+                        </div>
+                    </div>
+                    <div formGroupName="busineesDetails">
+                        <div class="row  mt-3">
+                            <div class="col-md-4">
+                                <label for="company" class="form-label">Business Name</label>
+                                <div class="input-group shadow-sm">
+                                    <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
+                                    <input id="company"  formControlName="busineesName"  class="form-control border-2"
+                                        placeholder="Enter your company name" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="position" class="form-label">Business Type</label>
+                                <div class="input-group shadow-sm">
+                                    <span class="input-group-text bg-light"><i class="bi bi-briefcase"></i></span>
+                                    <input id="position"  formControlName="busineesType"  class="form-control border-2"
+                                        placeholder="Enter your business type" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="salary" class="form-label">Annual Income</label>
+                                <div class="input-group shadow-sm">
+                                    <span class="input-group-text bg-light"><i class="bi bi-currency-dollar"></i></span>
+                                    <input id="salary"  formControlName="annualIncome"  class="form-control border-2"
+                                        placeholder="Enter your annual income" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-6">
+                                <label for="company" class="form-label">Business Address</label>
+                                <div class="input-group shadow-sm">
+                                    <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
+                                    <textarea id="company"  formControlName="address"  class="form-control border-2"
+                                        placeholder="Enter your company name"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+                <div class="col-lg-4" >
+                    <h3 class="mb-3 text-primary fw-bold heading">Contact Details</h3>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="personalEmail" class="form-label">Personal Email</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                                <input id="personalEmail"  formControlName="personalEmail"  class="form-control border-2"
+                                    placeholder="Enter personal email" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="officialEmail" class="form-label">Official Email</label>
+                            <div class="input-group shadow-sm">
+                                <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                                <input id="officialEmail"  formControlName="businesEmail"  class="form-control border-2"
+                                    placeholder="Enter official email" />
+                            </div>
+                        </div>
+                    </div>
+                    <div formArrayName="contactList" >
+                        <div *ngFor="let conatct of contacts.controls;let index= index"> 
+                            <div class="row g-2 mt-1" [formGroupName]="index">
+                                <div class="col-md-8">
+                                    <label for="mobile1" class="form-label">Mobile No (1)</label>
+                                    <div class="input-group shadow-sm">
+                                        <span class="input-group-text bg-light"><i class="bi bi-telephone"></i></span>
+                                        <input id="mobile1" formControlName="contactNo"  class="form-control border-2"
+                                            placeholder="Enter mobile number" />
+                                            {{conatct.get('contactNo')}}
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex align-items-end">
+                                    <button (click)="removeContact(index)" class="btn w-100 text-white"
+                                        style="background: linear-gradient(to right, #ff416c, #ff4b2b);">Remove</button>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                    <button (click)="addNewContactForm()" class="btn btn-sm text-white mt-2 addmore">
+                        Add More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="mb-4">
+            <div class="row g-3">
+                <div class="col-lg-7">
+                    <h4 class="mt-4 text-primary fw-bold heading">Loan Details</h4>
+                    <table class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Bank Name</th>
+                                <th>Loan Amount</th>
+                                <th>EMI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ABC Bank</td>
+                                <td>2,00,000</td>
+                                <td>12,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-5">
+                    <h5 class="mt-4 text-primary fw-bold heading text-center">Add Lone Details</h5>
+                    <div class="row g-3">
+
+                        <div class="col-md-3">
+                            <label for="bankName" class="form-label">Bank Name</label>
+                            <input id="bankName" class="form-control  border-2 shadow-sm"
+                                placeholder="Enter bank name" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="loanAmount" class="form-label">Loan Amount</label>
+                            <input id="loanAmount" class="form-control  border-2 shadow-sm" type="number"
+                                placeholder="Enter amount" />
+                        </div>
+                        <div class="col-md-3">
+                            <label for="emi" class="form-label">EMI</label>
+                            <input id="emi" class="form-control  border-2 shadow-sm" type="number"
+                                placeholder="Enter EMI" />
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button class="btn btn-sm text-white mt-4 addmore">
+                                Add More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center gap-2">
+            <button class="btn text-white"
+                style="background: linear-gradient(to right, #00c6ff, #0072ff);">Submit</button>
+            <button class="btn text-white" style="background: linear-gradient(to right, #11998e, #38ef7d);">Patch
+                Form</button>
+            <button class="btn text-white" style="background: linear-gradient(to right, #ff5f6d, #ffc371);">Set
+                Form</button>
+        </div>
+    </form>
+</div>

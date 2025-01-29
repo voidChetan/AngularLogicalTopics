@@ -28,6 +28,7 @@ import { MovieBookingComponent } from './pages/Logic-Development/movie-booking/m
 import { GrossaryCartComponent } from './pages/Logic-Development/grossary-cart/grossary-cart.component';
 import { RegisterStudentComponent } from './pages/Logic-Development/register-student/register-student.component';
 import { EncriptDecriptComponent } from './pages/Logic-Development/encript-decript/encript-decript.component';
+import { ReactiveFormAdvanceComponent } from './pages/reactive-form-advance/reactive-form-advance.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path:'inlineReactive',
     component: InlineEditingReactiveFormComponent
+  },
+  {
+    path:'reactive-form-adv',
+    component: ReactiveFormAdvanceComponent
   },
   {
     path:'template-form',

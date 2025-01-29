@@ -24,7 +24,7 @@ import { MyTootipDirective } from './shared/directives/my-tootip.directive';
 import { TolltipTemplateDirective } from './shared/directives/tolltip-template.directive';
 import { JsonUserComponent } from './pages/json-user/json-user.component';
 import { VoidTableComponent } from './reusable/void-table/void-table.component';
-import { AgGridAngular } from 'ag-grid-angular';
+import { AgGridAngular, AgGridModule } from 'ag-grid-angular';
 import { AgGridUseComponent } from './pages/ag-grid-use/ag-grid-use.component';
 import { ContentProjectionComponent } from './pages/content-projection/content-projection.component';
 import { FormElementWrapperComponent } from './reusable/form-element-wrapper/form-element-wrapper.component';
@@ -100,8 +100,7 @@ import { EncriptDecriptComponent } from './pages/Logic-Development/encript-decri
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    AgGridAngular
+    ReactiveFormsModule 
   ],
   providers: [
     {
